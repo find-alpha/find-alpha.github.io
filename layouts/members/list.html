@@ -1,0 +1,57 @@
+{{ define "main" }}
+{{ partial "title.html" . }}
+
+<div class="members-container">
+    <!-- Tab Navigation -->
+    <div class="member-tabs">
+        {{ range $index, $element := .Pages.ByWeight }}
+        <button class="member-tab-btn {{ if eq $index 0 }}active{{ end }}"
+            onclick="openCohort(event, 'cohort-{{ .File.TranslationBaseName }}')">
+            {{ .Title }}
+        </button>
+        {{ end }}
+    </div>
+
+    <!-- Content Areas -->
+    {{ range $index, $element := .Pages.ByWeight }}
+    <div id="cohort-{{ .File.TranslationBaseName }}" class="member-content {{ if eq $index 0 }}active{{ end }}">
+        <div class="member-grid">
+            {{ range .Params.members }}
+            <div class="member-card">
+                <figure>
+                    {{ if .photo }}
+                    <img src="{{ .photo }}" alt="{{ .name }}" />
+                    {{ else }}
+                    <div class="placeholder-image">No Photo</div>
+                    {{ end }}
+                </figure>
+                <div class="info">
+                    <h3>{{ .name }}</h3>
+                    <p class="affiliation">{{ .affiliation }}</p>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+</div>
+
+<script>
+    function openCohort(evt, cohortId) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("member-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+            tabcontent[i].classList.remove("active");
+        }
+        tablinks = document.getElementsByClassName("member-tab-btn");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cohortId).style.display = "grid"; // or block, controlled by css
+        document.getElementById(cohortId).classList.add("active");
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+{{ end }}

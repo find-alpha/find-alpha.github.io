@@ -2,68 +2,123 @@
 <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Find-Alpha</title>
-    <link>//localhost:2421/</link>
+    <link>//localhost:8080/</link>
     <description>Recent content on Find-Alpha</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <managingEditor>admin@finda-group.com (Find-Alpha)</managingEditor>
     <webMaster>admin@finda-group.com (Find-Alpha)</webMaster>
     <copyright>© Find-Alpha</copyright>
-    <lastBuildDate>Fri, 05 Jan 2024 00:00:00 +0900</lastBuildDate><atom:link href="//localhost:2421/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Jan 2024 00:00:00 +0900</lastBuildDate><atom:link href="//localhost:8080/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1기</title>
+      <link>//localhost:8080/members/1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>//localhost:8080/members/1/</guid><description>&lt;no value&gt;</description></item>
+    <item>
+      <title>2기</title>
+      <link>//localhost:8080/members/2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>//localhost:8080/members/2/</guid><description>&lt;no value&gt;</description></item>
+    <item>
+      <title>3기</title>
+      <link>//localhost:8080/members/3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>//localhost:8080/members/3/</guid><description>&lt;no value&gt;</description></item>
+    <item>
+      <title>4기</title>
+      <link>//localhost:8080/members/4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>//localhost:8080/members/4/</guid><description>&lt;no value&gt;</description></item>
+    <item>
+      <title>5기</title>
+      <link>//localhost:8080/members/5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>//localhost:8080/members/5/</guid><description>&lt;no value&gt;</description></item>
+    <item>
+      <title>6기</title>
+      <link>//localhost:8080/members/6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>//localhost:8080/members/6/</guid><description>&lt;no value&gt;</description></item>
+    <item>
+      <title>7기</title>
+      <link>//localhost:8080/members/7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>//localhost:8080/members/7/</guid><description>&lt;no value&gt;</description></item>
+    <item>
+      <title>8기</title>
+      <link>//localhost:8080/members/8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>//localhost:8080/members/8/</guid><description>&lt;no value&gt;</description></item>
+    <item>
+      <title>9기</title>
+      <link>//localhost:8080/members/9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>//localhost:8080/members/9/</guid><description>&lt;no value&gt;</description></item>
     <item>
       <title>Contact Information</title>
-      <link>//localhost:2421/recruit/contact/</link>
+      <link>//localhost:8080/recruit/contact/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
-      <guid>//localhost:2421/recruit/contact/</guid><description>&lt;no value&gt;</description></item>
+      <guid>//localhost:8080/recruit/contact/</guid><description>&lt;no value&gt;</description></item>
     <item>
       <title>신입 학회원</title>
-      <link>//localhost:2421/session/curriculum/</link>
+      <link>//localhost:8080/session/curriculum/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
-      <guid>//localhost:2421/session/curriculum/</guid><description>&lt;no value&gt;</description></item>
+      <guid>//localhost:8080/session/curriculum/</guid><description>&lt;no value&gt;</description></item>
     <item>
       <title>학회 소개</title>
-      <link>//localhost:2421/history/intro/</link>
+      <link>//localhost:8080/history/intro/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
-      <guid>//localhost:2421/history/intro/</guid><description>&lt;no value&gt;</description></item>
+      <guid>//localhost:8080/history/intro/</guid><description>&lt;no value&gt;</description></item>
+    <item>
+      <title>10기</title>
+      <link>//localhost:8080/members/10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>//localhost:8080/members/10/</guid><description>&lt;no value&gt;</description></item>
+    <item>
+      <title>11기</title>
+      <link>//localhost:8080/members/11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>//localhost:8080/members/11/</guid><description>&lt;no value&gt;</description></item>
     <item>
       <title>Q&amp;A</title>
-      <link>//localhost:2421/recruit/faq/</link>
+      <link>//localhost:8080/recruit/faq/</link>
       <pubDate>Tue, 02 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
-      <guid>//localhost:2421/recruit/faq/</guid><description>&lt;no value&gt;</description></item>
+      <guid>//localhost:8080/recruit/faq/</guid><description>&lt;no value&gt;</description></item>
     <item>
       <title>Recruiting Info</title>
-      <link>//localhost:2421/recruit/info/</link>
+      <link>//localhost:8080/recruit/info/</link>
       <pubDate>Tue, 02 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
-      <guid>//localhost:2421/recruit/info/</guid><description>&lt;no value&gt;</description></item>
+      <guid>//localhost:8080/recruit/info/</guid><description>&lt;no value&gt;</description></item>
     <item>
       <title>기존 학회원</title>
-      <link>//localhost:2421/session/existing/</link>
+      <link>//localhost:8080/session/existing/</link>
       <pubDate>Tue, 02 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
-      <guid>//localhost:2421/session/existing/</guid><description>&lt;no value&gt;</description></item>
+      <guid>//localhost:8080/session/existing/</guid><description>&lt;no value&gt;</description></item>
     <item>
       <title>역대 학회장 연혁</title>
-      <link>//localhost:2421/history/presidents/</link>
+      <link>//localhost:8080/history/presidents/</link>
       <pubDate>Tue, 02 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
-      <guid>//localhost:2421/history/presidents/</guid><description>&lt;no value&gt;</description></item>
+      <guid>//localhost:8080/history/presidents/</guid><description>&lt;no value&gt;</description></item>
     <item>
       <title>FIT (Find-A Institute of Technology)</title>
-      <link>//localhost:2421/session/fit/</link>
+      <link>//localhost:8080/session/fit/</link>
       <pubDate>Wed, 03 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
-      <guid>//localhost:2421/session/fit/</guid><description>&lt;no value&gt;</description></item>
+      <guid>//localhost:8080/session/fit/</guid><description>&lt;no value&gt;</description></item>
     <item>
       <title>수상</title>
-      <link>//localhost:2421/history/awards/</link>
+      <link>//localhost:8080/history/awards/</link>
       <pubDate>Thu, 04 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
-      <guid>//localhost:2421/history/awards/</guid><description>&lt;no value&gt;</description></item>
+      <guid>//localhost:8080/history/awards/</guid><description>&lt;no value&gt;</description></item>
     <item>
       <title>교재 소개</title>
-      <link>//localhost:2421/session/textbooks/</link>
+      <link>//localhost:8080/session/textbooks/</link>
       <pubDate>Tue, 02 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
-      <guid>//localhost:2421/session/textbooks/</guid><description>&lt;no value&gt;</description></item>
+      <guid>//localhost:8080/session/textbooks/</guid><description>&lt;no value&gt;</description></item>
     <item>
       <title>연구</title>
-      <link>//localhost:2421/history/research/</link>
+      <link>//localhost:8080/history/research/</link>
       <pubDate>Fri, 05 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
-      <guid>//localhost:2421/history/research/</guid><description>&lt;no value&gt;</description></item>
+      <guid>//localhost:8080/history/research/</guid><description>&lt;no value&gt;</description></item>
   </channel>
 </rss>
