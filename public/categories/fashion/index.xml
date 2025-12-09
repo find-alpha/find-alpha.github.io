@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fashion on Gallery</title>
+    <link>//localhost:9283/categories/fashion/</link>
+    <description>Recent content in Fashion on Gallery</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>user@example.com (Your Name)</managingEditor>
+    <webMaster>user@example.com (Your Name)</webMaster>
+    <copyright>© Your Name</copyright><atom:link href="//localhost:9283/categories/fashion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fashion &amp; Beauty</title>
+      <link>//localhost:9283/fashion-beauty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>user@example.com (Your Name)</author>
+      <guid>//localhost:9283/fashion-beauty/</guid><description>Fashion and Beauty are a powerful form of self-expression. This category documents style through inspiring shots of street fashion, skincare products, avant-garde editorial photographs, and more.</description></item>
+  </channel>
+</rss>

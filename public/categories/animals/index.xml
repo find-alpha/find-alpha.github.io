@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Animals on Gallery</title>
+    <link>//localhost:9283/categories/animals/</link>
+    <description>Recent content in Animals on Gallery</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>user@example.com (Your Name)</managingEditor>
+    <webMaster>user@example.com (Your Name)</webMaster>
+    <copyright>© Your Name</copyright>
+    <lastBuildDate>Sat, 01 Apr 2023 00:00:00 +0200</lastBuildDate><atom:link href="//localhost:9283/categories/animals/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cats</title>
+      <link>//localhost:9283/animals/cats/</link>
+      <pubDate>Sat, 01 Apr 2023 00:00:00 +0200</pubDate><author>user@example.com (Your Name)</author>
+      <guid>//localhost:9283/animals/cats/</guid><description>&lt;no value&gt;</description></item>
+    <item>
+      <title>Dogs</title>
+      <link>//localhost:9283/animals/dogs/</link>
+      <pubDate>Thu, 12 Jan 2023 00:00:00 +0100</pubDate><author>user@example.com (Your Name)</author>
+      <guid>//localhost:9283/animals/dogs/</guid><description>&lt;no value&gt;</description></item>
+  </channel>
+</rss>
