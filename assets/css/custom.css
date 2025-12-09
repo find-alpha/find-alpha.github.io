@@ -33,3 +33,64 @@ body > header {
   margin-bottom: 0;
 }
 */
+
+/* Post Card Styles */
+.post-card {
+  text-decoration: none;
+  background-color: var(--surface-2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.post-card figure {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  margin: 0;
+}
+
+.post-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-card .card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.post-card h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-1);
+}
+
+.post-card .post-summary {
+  font-size: 0.95rem;
+  color: var(--text-2);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.post-card .post-meta {
+  font-size: 0.85rem;
+  color: var(--text-2);
+  opacity: 0.8;
+  margin-top: auto;
+  padding-top: 1rem;
+}

@@ -1,8 +1,12 @@
 {{ define "main" }}
-  {{ partial "title.html" . }}
-  <section class="galleries">
-    {{ range where .Pages "Params.private" "ne" true }}
-      {{ partial "album-card.html" . }}
-    {{ end }}
-  </section>
+{{ partial "title.html" . }}
+<section class="galleries">
+  {{ range where .Pages "Params.private" "ne" true }}
+  {{ if or (eq .Type "posts") (eq .Params.view "post") }}
+  {{ partial "post-card.html" . }}
+  {{ else }}
+  {{ partial "album-card.html" . }}
+  {{ end }}
+  {{ end }}
+</section>
 {{ end }}

@@ -2,34 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:9283/animals/</loc>
-    <lastmod>2023-04-01T00:00:00+02:00</lastmod>
+    <loc>/history/</loc>
+    <lastmod>2024-01-03T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>//localhost:9283/fashion-beauty/</loc>
+    <loc>/members/</loc>
   </url><url>
-    <loc>//localhost:9283/nature/</loc>
+    <loc>/session/</loc>
+    <lastmod>2024-01-03T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>//localhost:9283/categories/animals/</loc>
-    <lastmod>2023-04-01T00:00:00+02:00</lastmod>
+    <loc>/recruit/</loc>
+    <lastmod>2024-01-02T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>//localhost:9283/animals/cats/</loc>
-    <lastmod>2023-04-01T00:00:00+02:00</lastmod>
+    <loc>/recruit/info/</loc>
+    <lastmod>2024-01-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>//localhost:9283/</loc>
-    <lastmod>2023-04-01T00:00:00+02:00</lastmod>
+    <loc>/session/curriculum/</loc>
+    <lastmod>2024-01-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>//localhost:9283/categories/nature/</loc>
-    <lastmod>2023-04-01T00:00:00+02:00</lastmod>
+    <loc>/history/intro/</loc>
+    <lastmod>2024-01-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>//localhost:9283/animals/dogs/</loc>
-    <lastmod>2023-01-12T00:00:00+01:00</lastmod>
+    <loc>/recruit/faq/</loc>
+    <lastmod>2024-01-02T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>//localhost:9283/about/</loc>
+    <loc>/session/textbooks/</loc>
+    <lastmod>2024-01-02T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>//localhost:9283/categories/beauty/</loc>
+    <loc>/history/presidents/</loc>
+    <lastmod>2024-01-02T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>//localhost:9283/categories/fashion/</loc>
+    <loc>/history/timeline/</loc>
+    <lastmod>2024-01-03T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>//localhost:9283/imprint/</loc>
+    <loc>/session/projects/</loc>
+    <lastmod>2024-01-03T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2024-01-03T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>/about/</loc>
+  </url><url>
+    <loc>/imprint/</loc>
   </url>
 </urlset>

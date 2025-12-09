@@ -1,0 +1,16 @@
+<a class="card post-card" href="{{ .RelPermalink }}" title="{{ .Title }}">
+  {{ with .Params.featured_image }}
+  <figure>
+    <img class="lazyload" data-src="{{ . }}" alt="{{ $.Title }}" />
+  </figure>
+  {{ end }}
+  <div class="card-content">
+    <h2>{{ .Title }}</h2>
+    <p class="post-summary">{{ .Summary | truncate 150 }}</p>
+    <p class="post-meta">
+      <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+        {{ .Date.Format "2006.01.02" }}
+      </time>
+    </p>
+  </div>
+</a>

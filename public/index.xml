@@ -1,34 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo Gallery on Gallery</title>
-    <link>//localhost:9283/</link>
-    <description>Recent content in Hugo Gallery on Gallery</description>
+    <title>Hugo Gallery on Find-Alpha</title>
+    <link>/</link>
+    <description>Recent content in Hugo Gallery on Find-Alpha</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <managingEditor>user@example.com (Your Name)</managingEditor>
-    <webMaster>user@example.com (Your Name)</webMaster>
-    <copyright>© Your Name</copyright>
-    <lastBuildDate>Sat, 01 Apr 2023 00:00:00 +0200</lastBuildDate><atom:link href="//localhost:9283/index.xml" rel="self" type="application/rss+xml" />
+    <language>ko</language>
+    <managingEditor>admin@finda-group.com (Find-Alpha)</managingEditor>
+    <webMaster>admin@finda-group.com (Find-Alpha)</webMaster>
+    <copyright>© Find-Alpha</copyright>
+    <lastBuildDate>Wed, 03 Jan 2024 00:00:00 +0900</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Fashion &amp; Beauty</title>
-      <link>//localhost:9283/fashion-beauty/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>user@example.com (Your Name)</author>
-      <guid>//localhost:9283/fashion-beauty/</guid><description>Fashion and Beauty are a powerful form of self-expression. This category documents style through inspiring shots of street fashion, skincare products, avant-garde editorial photographs, and more.</description></item>
+      <title>리크루트 일정 및 상세 내용</title>
+      <link>/recruit/info/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>/recruit/info/</guid><description>&lt;no value&gt;</description></item>
     <item>
-      <title>Nature</title>
-      <link>//localhost:9283/nature/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>user@example.com (Your Name)</author>
-      <guid>//localhost:9283/nature/</guid><description>Through photography, the beauty of Mother Nature can be frozen in time. This category celebrates the magic of our planet and beyond — from the immensity of the great outdoors, to miraculous moments in your own backyard.</description></item>
+      <title>커리큘럼 소개</title>
+      <link>/session/curriculum/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>/session/curriculum/</guid><description>&lt;no value&gt;</description></item>
     <item>
-      <title>Cats</title>
-      <link>//localhost:9283/animals/cats/</link>
-      <pubDate>Sat, 01 Apr 2023 00:00:00 +0200</pubDate><author>user@example.com (Your Name)</author>
-      <guid>//localhost:9283/animals/cats/</guid><description>&lt;no value&gt;</description></item>
+      <title>학회 소개</title>
+      <link>/history/intro/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>/history/intro/</guid><description>&lt;no value&gt;</description></item>
     <item>
-      <title>Dogs</title>
-      <link>//localhost:9283/animals/dogs/</link>
-      <pubDate>Thu, 12 Jan 2023 00:00:00 +0100</pubDate><author>user@example.com (Your Name)</author>
-      <guid>//localhost:9283/animals/dogs/</guid><description>&lt;no value&gt;</description></item>
+      <title>Q&amp;A</title>
+      <link>/recruit/faq/</link>
+      <pubDate>Tue, 02 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>/recruit/faq/</guid><description>&lt;no value&gt;</description></item>
+    <item>
+      <title>교재 소개</title>
+      <link>/session/textbooks/</link>
+      <pubDate>Tue, 02 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>/session/textbooks/</guid><description>&lt;no value&gt;</description></item>
+    <item>
+      <title>역대 학회장 연혁</title>
+      <link>/history/presidents/</link>
+      <pubDate>Tue, 02 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>/history/presidents/</guid><description>&lt;no value&gt;</description></item>
+    <item>
+      <title>연혁 및 수상 내역</title>
+      <link>/history/timeline/</link>
+      <pubDate>Wed, 03 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>/history/timeline/</guid><description>&lt;no value&gt;</description></item>
+    <item>
+      <title>프로젝트 팀 소개</title>
+      <link>/session/projects/</link>
+      <pubDate>Wed, 03 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>/session/projects/</guid><description>&lt;no value&gt;</description></item>
   </channel>
 </rss>
