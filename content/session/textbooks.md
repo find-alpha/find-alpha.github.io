@@ -3,7 +3,7 @@ title: "교재 소개"
 date: 2024-01-02
 summary: "세션에서 사용하는 주교재 및 참고도서입니다."
 view: "post"
-weight: 20
+weight: 40
 ---
 
 # 교재 소개

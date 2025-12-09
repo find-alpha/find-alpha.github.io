@@ -1,0 +1,15 @@
+<div class="president-card">
+    <figure>
+        {{ $image := .Get "image" }}
+        {{ if $image }}
+        <img src="{{ $image }}" alt="{{ .Get " name" }}">
+        {{ else }}
+        <div class="placeholder-image">No Image</div>
+        {{ end }}
+    </figure>
+    <div class="info">
+        <h3>{{ .Get "period" }} {{ .Get "name" }}</h3>
+        <p class="term">{{ .Get "term" }}</p>
+        <p class="description">{{ .Get "description" }}</p>
+    </div>
+</div>
