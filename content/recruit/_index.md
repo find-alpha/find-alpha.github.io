@@ -4,4 +4,8 @@ description: "신입 회원 모집 안내"
 weight: 4
 menus: "main"
 view: "post"
+resources:
+  - src: recruit-cover.jpg
+    params:
+      cover: true
 ---

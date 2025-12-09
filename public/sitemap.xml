@@ -2,46 +2,65 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/history/</loc>
-    <lastmod>2024-01-03T00:00:00+09:00</lastmod>
+    <loc>//localhost:4073/history/</loc>
+    <lastmod>2024-01-05T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>/members/</loc>
-  </url><url>
-    <loc>/session/</loc>
-    <lastmod>2024-01-03T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>/recruit/</loc>
-    <lastmod>2024-01-02T00:00:00+09:00</lastmod>
-  </url><url>
-    <loc>/recruit/info/</loc>
+    <loc>//localhost:4073/members/2024/</loc>
     <lastmod>2024-01-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>/session/curriculum/</loc>
+    <loc>//localhost:4073/members/</loc>
     <lastmod>2024-01-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>/history/intro/</loc>
+    <loc>//localhost:4073/session/</loc>
+    <lastmod>2024-01-03T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>//localhost:4073/recruit/</loc>
+    <lastmod>2024-01-02T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>//localhost:4073/recruit/contact/</loc>
     <lastmod>2024-01-01T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>/recruit/faq/</loc>
+    <loc>//localhost:4073/session/curriculum/</loc>
+    <lastmod>2024-01-01T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>//localhost:4073/history/intro/</loc>
+    <lastmod>2024-01-01T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>//localhost:4073/recruit/faq/</loc>
     <lastmod>2024-01-02T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>/session/textbooks/</loc>
+    <loc>//localhost:4073/recruit/info/</loc>
     <lastmod>2024-01-02T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>/history/presidents/</loc>
+    <loc>//localhost:4073/session/textbooks/</loc>
     <lastmod>2024-01-02T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>/history/timeline/</loc>
+    <loc>//localhost:4073/session/existing/</loc>
+    <lastmod>2024-01-02T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>//localhost:4073/history/presidents/</loc>
+    <lastmod>2024-01-02T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>//localhost:4073/session/fit/</loc>
     <lastmod>2024-01-03T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>/session/projects/</loc>
+    <loc>//localhost:4073/history/timeline/</loc>
     <lastmod>2024-01-03T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>/</loc>
+    <loc>//localhost:4073/session/projects/</loc>
     <lastmod>2024-01-03T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>/about/</loc>
+    <loc>//localhost:4073/history/awards/</loc>
+    <lastmod>2024-01-04T00:00:00+09:00</lastmod>
   </url><url>
-    <loc>/imprint/</loc>
+    <loc>//localhost:4073/history/research/</loc>
+    <lastmod>2024-01-05T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>//localhost:4073/</loc>
+    <lastmod>2024-01-05T00:00:00+09:00</lastmod>
+  </url><url>
+    <loc>//localhost:4073/about/</loc>
+  </url><url>
+    <loc>//localhost:4073/imprint/</loc>
   </url>
 </urlset>

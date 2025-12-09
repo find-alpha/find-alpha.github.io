@@ -1,17 +1,14 @@
 ---
-description: An example site for hugo-theme-gallery. Images from Unsplash.
-#lastmod: 2023-07-05
-title: Hugo Gallery
+title: "Find-Alpha"
+description: "금융공학 및 퀀트 투자 학회 Find-Alpha"
 resources:
-  - src: martin-martz-wRuhOOaG-Z4-unsplash.jpg
+  - src: cover.jpg
     params:
-      cover: true # cover of the home page is used for OpenGraph cards, etc.
+      cover: true
 menus:
   main:
     name: Home
     weight: -1
-# sub-galleries on list pages are sorted by date and weight (descending)
-#cascade:
-#  build:
-#    publishResources: false # do not include full images. Also disable download
 ---
+**Find-Alpha**는 금융공학 및 퀀트 투자를 연구하는 학회입니다. 
+아래의 섹션에서 학회 활동, 커리큘럼, 멤버, 리크루팅 정보를 확인하실 수 있습니다.

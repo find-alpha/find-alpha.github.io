@@ -1,10 +1,18 @@
 {{ define "main" }}
-  {{ partial "title.html" . }}
-  {{ partial "gallery.html" . }}
-  {{ partial "related.html" . }}
-  {{ with .Content }}
-    <section class="prose">
-      {{ . }}
-    </section>
+<nav class="breadcrumb">
+  <a href="{{ .Site.Home.RelPermalink }}">Home</a>
+  {{ range (split .RelPermalink "/") }}
+  {{ if ne . "" }}
+  / <a href="/{{ . }}">{{ humanize . }}</a>
   {{ end }}
+  {{ end }}
+</nav>
+{{ partial "title.html" . }}
+{{ partial "gallery.html" . }}
+{{ partial "related.html" . }}
+{{ with .Content }}
+<section class="prose">
+  {{ . }}
+</section>
+{{ end }}
 {{ end }}

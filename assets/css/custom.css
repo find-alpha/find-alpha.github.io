@@ -13,6 +13,13 @@
 }
 */
 
+/* Pretendard Font */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+body {
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
 /* Set maximum width for galleries to 1536px, add padding
 section.gallery {
   max-width: 1536px;
@@ -93,4 +100,29 @@ body > header {
   opacity: 0.8;
   margin-top: auto;
   padding-top: 1rem;
+}
+
+/* Breadcrumb Styles */
+.breadcrumb {
+  max-width: 768px;
+  margin: 0 auto 1.5rem;
+  padding: 0 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-2);
+}
+
+.breadcrumb a {
+  color: var(--text-2);
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+  color: var(--text-1);
+}
+
+/* Adjust Prose container alignment to match breadcrumb if needed */
+.prose {
+  margin-left: auto;
+  margin-right: auto;
 }

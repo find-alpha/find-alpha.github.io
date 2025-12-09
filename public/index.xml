@@ -1,54 +1,79 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo Gallery on Find-Alpha</title>
-    <link>/</link>
-    <description>Recent content in Hugo Gallery on Find-Alpha</description>
+    <title>Find-Alpha</title>
+    <link>//localhost:4073/</link>
+    <description>Recent content on Find-Alpha</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
     <managingEditor>admin@finda-group.com (Find-Alpha)</managingEditor>
     <webMaster>admin@finda-group.com (Find-Alpha)</webMaster>
     <copyright>© Find-Alpha</copyright>
-    <lastBuildDate>Wed, 03 Jan 2024 00:00:00 +0900</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Jan 2024 00:00:00 +0900</lastBuildDate><atom:link href="//localhost:4073/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>리크루트 일정 및 상세 내용</title>
-      <link>/recruit/info/</link>
+      <title>Contact Information</title>
+      <link>//localhost:4073/recruit/contact/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
-      <guid>/recruit/info/</guid><description>&lt;no value&gt;</description></item>
+      <guid>//localhost:4073/recruit/contact/</guid><description>&lt;no value&gt;</description></item>
     <item>
-      <title>커리큘럼 소개</title>
-      <link>/session/curriculum/</link>
+      <title>신입 학회원</title>
+      <link>//localhost:4073/session/curriculum/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
-      <guid>/session/curriculum/</guid><description>&lt;no value&gt;</description></item>
+      <guid>//localhost:4073/session/curriculum/</guid><description>&lt;no value&gt;</description></item>
     <item>
       <title>학회 소개</title>
-      <link>/history/intro/</link>
+      <link>//localhost:4073/history/intro/</link>
       <pubDate>Mon, 01 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
-      <guid>/history/intro/</guid><description>&lt;no value&gt;</description></item>
+      <guid>//localhost:4073/history/intro/</guid><description>&lt;no value&gt;</description></item>
     <item>
       <title>Q&amp;A</title>
-      <link>/recruit/faq/</link>
+      <link>//localhost:4073/recruit/faq/</link>
       <pubDate>Tue, 02 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
-      <guid>/recruit/faq/</guid><description>&lt;no value&gt;</description></item>
+      <guid>//localhost:4073/recruit/faq/</guid><description>&lt;no value&gt;</description></item>
+    <item>
+      <title>Recruiting Info</title>
+      <link>//localhost:4073/recruit/info/</link>
+      <pubDate>Tue, 02 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>//localhost:4073/recruit/info/</guid><description>&lt;no value&gt;</description></item>
     <item>
       <title>교재 소개</title>
-      <link>/session/textbooks/</link>
+      <link>//localhost:4073/session/textbooks/</link>
       <pubDate>Tue, 02 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
-      <guid>/session/textbooks/</guid><description>&lt;no value&gt;</description></item>
+      <guid>//localhost:4073/session/textbooks/</guid><description>&lt;no value&gt;</description></item>
+    <item>
+      <title>기존 학회원</title>
+      <link>//localhost:4073/session/existing/</link>
+      <pubDate>Tue, 02 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>//localhost:4073/session/existing/</guid><description>&lt;no value&gt;</description></item>
     <item>
       <title>역대 학회장 연혁</title>
-      <link>/history/presidents/</link>
+      <link>//localhost:4073/history/presidents/</link>
       <pubDate>Tue, 02 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
-      <guid>/history/presidents/</guid><description>&lt;no value&gt;</description></item>
+      <guid>//localhost:4073/history/presidents/</guid><description>&lt;no value&gt;</description></item>
+    <item>
+      <title>FIT (Find-A Institute of Technology)</title>
+      <link>//localhost:4073/session/fit/</link>
+      <pubDate>Wed, 03 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>//localhost:4073/session/fit/</guid><description>&lt;no value&gt;</description></item>
     <item>
       <title>연혁 및 수상 내역</title>
-      <link>/history/timeline/</link>
+      <link>//localhost:4073/history/timeline/</link>
       <pubDate>Wed, 03 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
-      <guid>/history/timeline/</guid><description>&lt;no value&gt;</description></item>
+      <guid>//localhost:4073/history/timeline/</guid><description>&lt;no value&gt;</description></item>
     <item>
       <title>프로젝트 팀 소개</title>
-      <link>/session/projects/</link>
+      <link>//localhost:4073/session/projects/</link>
       <pubDate>Wed, 03 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
-      <guid>/session/projects/</guid><description>&lt;no value&gt;</description></item>
+      <guid>//localhost:4073/session/projects/</guid><description>&lt;no value&gt;</description></item>
+    <item>
+      <title>수상</title>
+      <link>//localhost:4073/history/awards/</link>
+      <pubDate>Thu, 04 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>//localhost:4073/history/awards/</guid><description>&lt;no value&gt;</description></item>
+    <item>
+      <title>연구</title>
+      <link>//localhost:4073/history/research/</link>
+      <pubDate>Fri, 05 Jan 2024 00:00:00 +0900</pubDate><author>admin@finda-group.com (Find-Alpha)</author>
+      <guid>//localhost:4073/history/research/</guid><description>&lt;no value&gt;</description></item>
   </channel>
 </rss>
