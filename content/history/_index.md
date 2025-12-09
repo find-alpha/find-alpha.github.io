@@ -1,11 +1,8 @@
 ---
-title: "연혁 (History)"
+title: "History"
 description: "학회 소개 및 연혁"
 weight: 1
 menus: "main"
 view: "post"
-resources:
-  - src: history-cover.jpg
-    params:
-      cover: true
+featured_image: "/images/history-cover.jpg"
 ---

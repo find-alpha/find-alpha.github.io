@@ -41,6 +41,25 @@ body > header {
 }
 */
 
+/* Single Row Galleries Override */
+section.galleries {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto;
+  /* Adds scroll if items become too squished, optional but safe */
+  gap: 1.5rem;
+  grid-template-columns: none !important;
+  /* Reset grid */
+}
+
+section.galleries>* {
+  flex: 1 1 0px;
+  /* Distribute space equally */
+  min-width: 200px;
+  /* Prevent becoming unreadably small, will trigger scroll if needed */
+  width: auto !important;
+}
+
 /* Post Card Styles */
 .post-card {
   text-decoration: none;
@@ -196,4 +215,119 @@ body > header {
   font-size: 0.95rem;
   color: var(--text-1);
   line-height: 1.5;
+}
+
+/* Markdown Content Styles (Prose) */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  color: var(--text-1);
+  font-weight: 700;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+  line-height: 1.3;
+}
+
+.prose h1 {
+  font-size: 2.25rem;
+}
+
+.prose h2 {
+  font-size: 1.75rem;
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 0.3em;
+}
+
+.prose h3 {
+  font-size: 1.5rem;
+}
+
+.prose h4 {
+  font-size: 1.25rem;
+}
+
+.prose p {
+  margin-bottom: 1.25em;
+  line-height: 1.75;
+}
+
+/* Code Blocks */
+.prose pre {
+  background-color: #282c34;
+  /* Dark background for code blocks */
+  color: #abb2bf;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.prose code {
+  background-color: var(--surface-2);
+  color: var(--text-1);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit;
+  font-size: 1em;
+}
+
+/* Blockquotes (Callouts) */
+.prose blockquote {
+  border-left: 4px solid var(--text-2);
+  background-color: var(--surface-2);
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  color: var(--text-2);
+  font-style: italic;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.prose blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* HR */
+.prose hr {
+  margin: 3rem 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
+/* Lists */
+.prose ul,
+.prose ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose strong {
+  font-weight: 700;
+  color: var(--text-1);
+}
+
+.prose a {
+  color: #3b82f6;
+  /* Blue link color */
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: #2563eb;
 }

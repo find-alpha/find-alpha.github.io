@@ -16,7 +16,7 @@ email = "admin@finda-group.com"
 name = "Find-Alpha"
 [params.socialIcons]
 #facebook = "https://www.facebook.com/"
-instagram = "https://www.instagram.com/official_find_a/"
+instagram = "https://www.instagram.com/official_find_a"
 github = "https://github.com/find-alpha"
 youtube = "https://www.youtube.com/@FIND-A-Quant"
 email = "mailto:admin@finda-group.com"

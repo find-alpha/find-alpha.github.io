@@ -1,10 +1,7 @@
 ---
-title: "알루미 (Alumni)"
+title: "Alumni"
 description: "멤버 소개"
 weight: 2
 menus: "main"
-resources:
-  - src: alumni-cover.jpg
-    params:
-      cover: true
+featured_image: "/images/alumni-cover.jpg"
 ---
