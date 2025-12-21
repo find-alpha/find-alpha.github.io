@@ -3,7 +3,7 @@ title: "동문"
 # meta title
 meta_title: ""
 # meta description
-description: "This is meta description"
+description: "FIND-A 동문 정보"
 # save as draft
 draft: false
 ---

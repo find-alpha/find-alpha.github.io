@@ -1,9 +1,9 @@
 ---
 title: "갤러리"
 # meta title
-meta_title: ""
+meta_title: "FIND-A 갤러리"
 # meta description
-description: "This is meta description"
+description: "FIND-A 갤러리입니다."
 # save as draft
 draft: false
 ---

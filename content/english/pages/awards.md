@@ -1,9 +1,9 @@
 ---
 title: "수상 내역"
 # meta title
-meta_title: ""
+meta_title: "FIND-A 수상 내역"
 # meta description
-description: "This is meta description"
+description: "FIND-A 수상 내역입니다."
 # save as draft
 draft: false
 ---

@@ -1,9 +1,9 @@
 ---
-title: "수상 내역"
+title: "연구"
 # meta title
-meta_title: ""
+meta_title: "FIND-A 연구 이력"
 # meta description
-description: "This is meta description"
+description: "FIND-A 연구 이력입니다."
 # save as draft
 draft: false
 ---
