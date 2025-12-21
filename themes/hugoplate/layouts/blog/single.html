@@ -1,98 +1,71 @@
 {{ define "main" }}
-  <section class="section pt-7">
+  <section class="section-sm pb-0">
     <div class="container">
-      <div class="row justify-center">
-        <article class="lg:col-10">
+      <div
+        class="row border-border dark:border-darkmode-border justify-center border-b pb-14">
+        <div class="lg:col-4 text-center">
           {{ $image:= .Params.image }}
           {{ if $image }}
-            <div class="mb-10">
-              {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "w-full rounded") }}
+            <!-- 이미지 스타일: 원형(rounded-full) 및 비율 유지(object-cover) 추가 -->
+            {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "mx-auto rounded-full object-cover" "Size" "200x200") }}
+          {{ else if .Params.Email }}
+            <img
+              class="mx-auto rounded-full"
+              alt="{{ .Title }}"
+              height="200"
+              width="200"
+              src="https://www.gravatar.com/avatar/{{ md5 .Params.email }}?s=128&pg&d=identicon" />
+          {{ end }}
+          
+          <h1 class="h3 mt-10">{{ .Title }}</h1>
+
+          <!-- [요청 1] 역할 표시 (예: 1기 학회장) -->
+          {{ with .Params.role }}
+            <p class="text-primary font-bold mt-2 text-lg">{{ . }}</p>
+          {{ end }}
+
+          <!-- [요청 2] 경력사항 불릿 리스트 -->
+          {{ if .Params.career }}
+            <div class="mt-6 flex justify-center">
+              <!-- inline-block과 text-left를 사용해 박스는 중앙, 글자는 왼쪽 정렬 -->
+              <ul class="inline-block text-left list-disc pl-5 space-y-1 text-text dark:text-light">
+                {{ range .Params.career }}
+                  <li>{{ . }}</li>
+                {{ end }}
+              </ul>
             </div>
           {{ end }}
-          <h1 class="h2 mb-4">
-            {{ .Title }}
-          </h1>
-          <ul class="mb-4">
-            <li class="mr-4 inline-block">
-              <a
-                href="{{ `authors/` | relLangURL }}{{ .Params.Author | urlize }}/">
-                <i class="fa-regular fa-circle-user mr-2"></i
-                >{{ .Params.author }}
-              </a>
-            </li>
-            {{ $categories:= .Params.categories }}
-            {{ if $categories }}
-              <li class="mr-4 inline-block">
-                <i class="fa-regular fa-folder mr-2"></i>
-                {{ range $i,$p:= $categories }}
-                  <a
-                    href="{{ `categories/` | relLangURL }}{{ . | urlize | lower }}/"
-                    class=""
-                    >{{ . | humanize }}{{ if ne $i (sub (len $categories) 1) }}
-                      {{ "," }}
-                    {{ end }}
-                  </a>
-                {{ end }}
-              </li>
-            {{ end }}
-            <li class="mr-4 inline-block">
-              <i class="fa-regular fa-clock mr-2"></i>
-              {{ time.Format ":date_long" .PublishDate }}
-            </li>
-          </ul>
-          <div class="content mb-10">
-            {{ partial "toc.html" (dict "Class" "blog" "Collapsed" false "TableOfContents" .TableOfContents ) }}
+
+          <!-- 본문 (자기소개 등) -->
+          <div class="content mt-8 text-center">
             {{ .Content }}
           </div>
-          <div class="row items-start justify-between">
-            {{ $tags:= .Params.tags }}
-            {{ if $tags }}
-              <div class="lg:col-6 mb-10 flex items-center lg:mb-0">
-                <h5 class="mr-3">{{ T "tags" | default "Tags" }} :</h5>
-                <ul>
-                  {{ range $i,$p:= $tags }}
-                    <li class="inline-block">
-                      <a
-                        class="bg-light hover:bg-primary dark:bg-darkmode-light dark:hover:bg-darkmode-primary dark:hover:text-text-dark m-1 block rounded px-3 py-1 hover:text-white"
-                        href="{{ `tags/` | relLangURL }}{{ . | urlize | lower }}/">
-                        {{ . | humanize }}
-                      </a>
-                    </li>
-                  {{ end }}
-                </ul>
-              </div>
+
+          <ul class="social-icons ml-4 mt-10 text-center">
+            {{ range .Params.social }}
+              <li>
+                <a
+                  href="{{ .link | safeURL }}"
+                  target="_blank"
+                  rel="noopener nofollow">
+                  <span class="sr-only">{{ .title }}</span>
+                  <i class="{{ .icon }}"></i>
+                </a>
+              </li>
             {{ end }}
-            <div class="lg:col-6 flex items-center lg:justify-end">
-              <h5>{{ T "share" | default "Share" }} :</h5>
-              {{ partial "social-share" (dict "Context" . "Class" "share-icons" "Title" .Title "Whatsapp" false "Telegram" false "Linkedin" false "Pinterest" false "Tumblr" false "Vk" false "Reddit" false) }}
-            </div>
-          </div>
-          <!-- comments -->
-          {{ if site.Config.Services.Disqus.Shortname }}
-            <div class="mt-20">
-              {{ partial "disqus.html" . }}
-            </div>
-          {{ end }}
-        </article>
+          </ul>
+        </div>
       </div>
 
-      <!-- Related posts -->
-      {{ $related := .Site.RegularPages.Related . | first 10 }}
-      {{ $related = $related | shuffle | first 3 }}
-      {{ with $related }}
-        <div class="section pb-0">
-          <h2 class="h3 mb-12">
-            {{ T "related_posts" | default "Related Posts" }}
-          </h2>
-          <div class="row">
-            {{ range . }}
-              <div class="lg:col-4 md:col-6 mb-14">
-                {{ partial "components/blog-card" . }}
-              </div>
-            {{ end }}
+      <!-- 하단: 해당 작성자의 글 목록 -->
+      <div class="row pb-16 pt-14">
+        {{ $filterByAuthor := where site.RegularPages "Params.author" "==" .Title }}
+        {{ range $filterByAuthor }}
+          <div class="md:col-6 lg:col-4 mb-12">
+            {{ partial "components/blog-card" . }}
           </div>
-        </div>
-      {{ end }}
+        {{ end }}
+      </div>
     </div>
   </section>
 {{ end }}

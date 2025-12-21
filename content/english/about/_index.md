@@ -1,5 +1,5 @@
 ---
-title: "Hey, I am John Doe!"
+title: "금융데이터분석학회 FIND-A"
 meta_title: "About"
 description: "this is meta description"
 image: "/images/avatar.png"

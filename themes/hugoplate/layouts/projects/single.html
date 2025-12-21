@@ -1,0 +1,116 @@
+{{ define "main" }}
+<section class="section pt-14 pb-20">
+  <div class="container">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+      
+      <!-- 사이드바: 다른 프로젝트 목록 -->
+      <div class="lg:col-span-3 order-2 lg:order-1">
+        <!-- [수정] bg-gray-800 -> bg-[#222222], border-gray-700 -> border-white/10 -->
+        <div class="sticky top-24 bg-theme-light dark:bg-[#222222] p-6 rounded-xl border border-border dark:border-white/10">
+          <h4 class="mb-4 text-lg font-bold border-b border-border dark:border-white/10 pb-2 text-dark dark:text-white">
+            프로젝트 목록
+          </h4>
+          <ul class="space-y-1">
+            <li>
+              <!-- [수정] text-gray-300 -> text-white/80 -->
+              <a href="/projects/" class="block py-2 px-3 rounded hover:bg-white dark:hover:bg-white/5 hover:text-primary transition font-medium text-sm text-dark dark:text-white/80">
+                <i class="fa fa-th-large mr-2"></i>전체 보기
+              </a>
+            </li>
+            {{ range .CurrentSection.RegularPages.ByWeight }}
+            <li>
+              <a href="{{ .RelPermalink }}" 
+                 class="block py-2 px-3 rounded transition text-sm
+                 {{ if eq $.Permalink .Permalink }}
+                   bg-primary text-white font-bold shadow-md
+                 {{ else }}
+                   text-text dark:text-white/80 hover:bg-white dark:hover:bg-white/5 hover:text-primary
+                 {{ end }}">
+                {{ .Title }}
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+
+      <!-- 본문 컨텐츠 -->
+      <div class="lg:col-span-9 order-1 lg:order-2">
+        <!-- [수정] bg-gray-800 -> bg-[#222222], border-gray-700 -> border-white/10 -->
+        <div class="bg-white dark:bg-[#222222] p-8 md:p-10 rounded-2xl shadow-sm border border-border dark:border-white/10">
+          
+          <!-- 헤더 -->
+          <div class="mb-8 border-b border-border dark:border-white/10 pb-6">
+            <span class="text-primary font-bold text-sm uppercase tracking-wider">Project Team</span>
+            <h1 class="h2 mt-2 mb-4 text-dark dark:text-white">{{ .Title }}</h1>
+            <!-- [수정] text-gray-300 -> text-white/80 -->
+            <p class="text-lg text-text dark:text-white/80">{{ .Description }}</p>
+          </div>
+
+          <!-- 본문 -->
+          <!-- [수정] text-gray-300 -> text-white/80 -->
+          <div class="content project-content text-text dark:text-white/80">
+            {{ .Content }}
+          </div>
+
+          <!-- 하단 네비게이션 -->
+          <div class="mt-12 flex justify-between border-t border-border dark:border-white/10 pt-8">
+            {{ with .PrevInSection }}
+            <a href="{{ .RelPermalink }}" class="text-sm font-bold hover:text-primary flex items-center text-dark dark:text-white">
+              <i class="fa fa-arrow-left mr-2"></i> {{ .Title }}
+            </a>
+            {{ else }}
+            <span></span>
+            {{ end }}
+
+            {{ with .NextInSection }}
+            <a href="{{ .RelPermalink }}" class="text-sm font-bold hover:text-primary flex items-center text-dark dark:text-white">
+              {{ .Title }} <i class="fa fa-arrow-right ml-2"></i>
+            </a>
+            {{ end }}
+          </div>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* 라이트 모드 스타일 */
+  .project-content aside {
+    background-color: rgba(var(--color-primary-rgb), 0.05);
+    border-left: 4px solid var(--color-primary);
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    font-style: normal;
+    color: inherit;
+  }
+
+  /* 
+    [수정] 다크모드 대응
+    - 배경을 약간 투명한 흰색으로 설정
+    - 글자색(color)을 흰색(#fff)으로 강제
+  */
+  :is(.dark) .project-content aside {
+    background-color: rgba(255, 255, 255, 0.1); 
+    border-left-color: var(--color-primary);
+    color: #ffffff;
+  }
+  
+  /* [수정] 리스트 아이템 색상: 흰색의 80% 불투명도 */
+  :is(.dark) .project-content ul, 
+  :is(.dark) .project-content ol {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  /* 제목 태그 색상 보정 */
+  :is(.dark) .project-content h1,
+  :is(.dark) .project-content h2,
+  :is(.dark) .project-content h3 {
+    color: #ffffff;
+  }
+</style>
+{{ end }}

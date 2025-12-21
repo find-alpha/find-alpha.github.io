@@ -7,7 +7,7 @@ banner:
   button:
     enable: true
     label: "12기 지원하기"
-    link: "https://github.com/zeon-studio/hugoplate"
+    link: "https://github.com/find-alpha.github.io/apply"
 
 # # Features
 # features:

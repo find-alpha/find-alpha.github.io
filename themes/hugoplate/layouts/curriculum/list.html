@@ -1,0 +1,49 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+  <section class="section pt-14">
+    <div class="container">
+      
+      <!-- 설명글 -->
+      <div class="text-center mb-16 max-w-2xl mx-auto">
+        <div class="content">
+          {{ .Content }}
+        </div>
+      </div>
+
+      <!-- 카드 영역: Tailwind Grid 사용 -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {{ range .RegularPages.ByWeight }}
+          <div class="
+              group
+              relative
+              flex flex-col items-center justify-center
+              text-center
+              bg-theme-light dark:bg-darkmode-theme-light
+              rounded-2xl
+              p-10
+              border border-border dark:border-darkmode-border
+              hover:border-primary
+              transition-all duration-300
+              hover:shadow-lg
+              min-h-[250px]
+            ">
+            
+            <h2 class="text-2xl font-bold mb-4 text-dark dark:text-white">
+              {{ .Title }}
+            </h2>
+            
+            <p class="mb-8 text-text dark:text-light/80">
+              {{ .Params.description }}
+            </p>
+            
+            <a href="{{ .RelPermalink }}" class="btn btn-outline-primary mt-auto">
+              자세히 보기
+            </a>
+            
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}

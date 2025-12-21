@@ -2,62 +2,115 @@
 
 # main menu
 [[main]]
-name = "Home"
+name = "홈"
 url = "/"
 weight = 1
 
 [[main]]
-name = "About"
-url = "/about"
+name = "소개"
+url = "/introduction"
 weight = 2
 
 [[main]]
-name = "Elements"
-url = "/elements"
+parent = "소개"
+name = "소개"
+url = "/introduction"
+weight = 1
+
+[[main]]
+parent = "소개"
+name = "수상"
+url = "/awards"
+weight = 2
+
+[[main]]
+parent = "소개"
+name = "연구"
+url = "/research"
 weight = 3
 
 [[main]]
+parent = "소개"
+name = "커리큘럼"
+url = "/curriculum"
 weight = 4
-name = "Pages"
 
 [[main]]
-parent = "Pages"
-name = "Blog"
+parent = "소개"
+name = "프로젝트"
+url = "/projects"
+weight = 5
+
+
+[[main]]
+name = "임원진"
+url = "/presidents"
+weight = 3
+
+
+[[main]]
+name = "동문"
+url = "/alumni"
+weight = 4
+
+
+[[main]]
+name = "블로그"
 url = "/blog"
+weight = 5
+
 
 [[main]]
-parent = "Pages"
-name = "Contact"
+name = "갤러리"
+url = "/gallery"
+weight = 6
+
+
+[[main]]
+name = "지원하기"
+url = "/apply"
+weight = 7
+
+
+[[main]]
+name = "문의하기"
 url = "/contact"
+weight = 8
 
-[[main]]
-parent = "Pages"
-name = "Authors"
-url = "/authors"
 
-[[main]]
-parent = "Pages"
-name = "Categories"
-url = "/categories"
+# [[main]]
+# parent = "Pages"
+# name = "Blog"
+# url = "/blog"
 
-[[main]]
-parent = "Pages"
-name = "404 Page"
-url = "/404"
+# [[main]]
+# parent = "Pages"
+# name = "Contact"
+# url = "/contact"
+
+# [[main]]
+# parent = "Pages"
+# name = "Categories"
+# url = "/categories"
+
+# [[main]]
+# parent = "Pages"
+# name = "Authors"
+# url = "/authors"
+
+# [[main]]
+# parent = "Pages"
+# name = "404 Page"
+# url = "/404"
 
 
 # footer menu
 [[footer]]
-name = "About"
+name = "소개"
 url = "/about"
 weight = 1
 
 [[footer]]
-name = "Elements"
-url = "/elements"
+name = "갤러리"
+url = "/gallery"
 weight = 2
-
-[[footer]]
-name = "Privacy Policy"
-url = "/privacy-policy"
-weight = 3

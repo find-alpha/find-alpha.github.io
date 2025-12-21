@@ -1,0 +1,38 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <div class="row">
+      
+      <!-- 사이드바 (PC에서는 왼쪽, 모바일에서는 상단) -->
+      <div class="lg:col-3 mb-10 lg:mb-0">
+        <div class="bg-light dark:bg-darkmode-light p-6 rounded-lg sticky top-24">
+          <h4 class="mb-4 text-lg font-bold">커리큘럼 목록</h4>
+          <ul class="space-y-2">
+            
+            <!-- 같은 섹션 내의 다른 페이지들 링크 -->
+            {{ range .CurrentSection.RegularPages }}
+            <li>
+              <a href="{{ .RelPermalink }}" 
+                 class="block hover:text-primary transition {{ if eq $.Permalink .Permalink }}text-primary font-bold{{ else }}text-text dark:text-light{{ end }}">
+                {{ .Title }}
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+
+      <!-- 본문 컨텐츠 -->
+      <div class="lg:col-9">
+        <div class="bg-white dark:bg-darkmode-body p-8 rounded-lg shadow-sm border border-border dark:border-darkmode-border">
+          <h1 class="h2 mb-6">{{ .Title }}</h1>
+          <div class="content">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{{ end }}

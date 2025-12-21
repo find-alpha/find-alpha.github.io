@@ -1,24 +1,24 @@
 {
   "main": [
     {
-      "name": "facebook",
-      "icon": "fab fa-facebook",
-      "link": "https://www.facebook.com/"
+      "name": "kakaotalk-channel",
+      "icon": "fa-solid fa-comment",
+      "link": "https://pf.kakao.com/_raUJK"
     },
     {
-      "name": "twitter",
-      "icon": "fab fa-twitter",
-      "link": "https://twitter.com/"
+      "name": "instagram",
+      "icon": "fa-brands fa-instagram",
+      "link": "https://www.instagram.com/official_find_a/"
     },
     {
       "name": "github",
-      "icon": "fab fa-github",
-      "link": "https://www.github.com/"
+      "icon": "fa-brands fa-github",
+      "link": "https://www.github.com/find-alpha"
     },
     {
       "name": "linkedin",
-      "icon": "fab fa-linkedin",
-      "link": "https://www.linkedin.com/"
+      "icon": "fa-brands fa-linkedin",
+      "link": "https://www.linkedin.com/company/find-a/"
     }
   ]
 }
