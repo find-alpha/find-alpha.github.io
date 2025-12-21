@@ -69,7 +69,7 @@ keywords = ["Boilerplate", "Hugo"]
 description = "Financial Data Analysis"
 author = "FIND-A"
 twitter = "FIND-A"
-image = "images/screenshot.png"
+image = "images/og-image.png"
 
 
 # site verifications
