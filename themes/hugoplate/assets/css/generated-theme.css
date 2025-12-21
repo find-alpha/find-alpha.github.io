@@ -21,9 +21,9 @@
   --color-darkmode-border: #3E3E3E;
   --color-darkmode-light: #222222;
   --color-darkmode-dark: #fff;
-  --color-darkmode-text: #B4AFB6;
-  --color-darkmode-text-dark: #fff;
-  --color-darkmode-text-light: #B4AFB6;
+  --color-darkmode-text: #D1D5DB;
+  --color-darkmode-text-dark: #FFFFFF;
+  --color-darkmode-text-light: #9CA3AF;
 
   /* === Font Families === */
   --font-primary: Heebo, sans-serif;

@@ -6,7 +6,6 @@
       
       <!-- 상단 설명글 -->
       <div class="max-w-3xl mx-auto text-center mb-16">
-        <!-- [수정] text-gray-200 -> text-white/90 (무채색) -->
         <div class="content text-lg text-text dark:text-white/90">
           {{ .Content }}
         </div>
@@ -18,15 +17,15 @@
         {{ range .RegularPages.ByWeight }}
           <div class="
               flex flex-col
-              bg-white dark:bg-[#222222]  <!-- [수정] 푸른끼 없는 진한 회색 -->
+              bg-white dark:bg-[#222222]
               rounded-xl overflow-hidden
-              border border-border dark:border-white/10 <!-- [수정] 흰색의 10% 투명도 테두리 -->
+              border border-border dark:border-white/10
               hover:border-primary hover:shadow-xl
               transition-all duration-300
               group
             ">
             
-            <!-- 카드 헤더 (색상 포인트) -->
+            <!-- 카드 헤더 바 -->
             <div class="h-2 w-full bg-primary/80 group-hover:bg-primary transition-colors"></div>
 
             <div class="p-8 flex flex-col flex-grow h-full">
@@ -35,20 +34,21 @@
                 {{ .Title }}
               </h2>
               
-              <!-- 설명: [수정] text-gray-300 -> text-white/70 -->
+              <!-- 설명 -->
               <p class="text-text dark:text-white/70 mb-6 text-sm flex-grow line-clamp-3">
                 {{ .Description }}
               </p>
               
               <!-- 하단 정보 -->
-              <!-- [수정] border-gray-700 -> border-white/10 -->
               <div class="mt-auto pt-6 border-t border-border dark:border-white/10 flex justify-between items-center">
-                <!-- [수정] text-gray-400 -> text-white/50 -->
+                
+                <!-- [수정] 다크모드에서 잘 보이도록 white/50 적용 -->
                 <span class="text-xs text-light-text dark:text-white/50 font-medium">
                   FIND-A Project
                 </span>
 
-                <a href="{{ .RelPermalink }}" class="text-sm font-bold text-primary hover:underline flex items-center">
+                <!-- [수정] 다크모드에서는 흰색 -> 호버 시 Primary 컬러 -->
+                <a href="{{ .RelPermalink }}" class="text-sm font-bold text-primary dark:text-white hover:text-primary dark:hover:text-primary hover:underline flex items-center transition-colors">
                   자세히 보기 <i class="fa fa-arrow-right ml-1 text-xs"></i>
                 </a>
               </div>

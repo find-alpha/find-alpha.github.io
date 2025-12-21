@@ -3,17 +3,15 @@
   <div class="container">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
       
-      <!-- 사이드바: 다른 프로젝트 목록 -->
+      <!-- 사이드바 -->
       <div class="lg:col-span-3 order-2 lg:order-1">
-        <!-- [수정] bg-gray-800 -> bg-[#222222], border-gray-700 -> border-white/10 -->
         <div class="sticky top-24 bg-theme-light dark:bg-[#222222] p-6 rounded-xl border border-border dark:border-white/10">
           <h4 class="mb-4 text-lg font-bold border-b border-border dark:border-white/10 pb-2 text-dark dark:text-white">
             프로젝트 목록
           </h4>
           <ul class="space-y-1">
             <li>
-              <!-- [수정] text-gray-300 -> text-white/80 -->
-              <a href="/projects/" class="block py-2 px-3 rounded hover:bg-white dark:hover:bg-white/5 hover:text-primary transition font-medium text-sm text-dark dark:text-white/80">
+              <a href="/projects/" class="block py-2 px-3 rounded hover:bg-white dark:hover:bg-white/5 hover:text-primary transition font-medium text-sm text-dark dark:text-white/90">
                 <i class="fa fa-th-large mr-2"></i>전체 보기
               </a>
             </li>
@@ -24,7 +22,7 @@
                  {{ if eq $.Permalink .Permalink }}
                    bg-primary text-white font-bold shadow-md
                  {{ else }}
-                   text-text dark:text-white/80 hover:bg-white dark:hover:bg-white/5 hover:text-primary
+                   text-text dark:text-white/70 hover:bg-white dark:hover:bg-white/5 hover:text-primary dark:hover:text-primary
                  {{ end }}">
                 {{ .Title }}
               </a>
@@ -36,19 +34,19 @@
 
       <!-- 본문 컨텐츠 -->
       <div class="lg:col-span-9 order-1 lg:order-2">
-        <!-- [수정] bg-gray-800 -> bg-[#222222], border-gray-700 -> border-white/10 -->
         <div class="bg-white dark:bg-[#222222] p-8 md:p-10 rounded-2xl shadow-sm border border-border dark:border-white/10">
           
           <!-- 헤더 -->
           <div class="mb-8 border-b border-border dark:border-white/10 pb-6">
-            <span class="text-primary font-bold text-sm uppercase tracking-wider">Project Team</span>
+            <!-- [수정] 라벨 색상 변경: 다크모드에서 흰색(60%) -->
+            <span class="font-bold text-sm uppercase tracking-wider text-primary dark:text-white/60">
+              Project Team
+            </span>
             <h1 class="h2 mt-2 mb-4 text-dark dark:text-white">{{ .Title }}</h1>
-            <!-- [수정] text-gray-300 -> text-white/80 -->
             <p class="text-lg text-text dark:text-white/80">{{ .Description }}</p>
           </div>
 
           <!-- 본문 -->
-          <!-- [수정] text-gray-300 -> text-white/80 -->
           <div class="content project-content text-text dark:text-white/80">
             {{ .Content }}
           </div>
@@ -56,7 +54,8 @@
           <!-- 하단 네비게이션 -->
           <div class="mt-12 flex justify-between border-t border-border dark:border-white/10 pt-8">
             {{ with .PrevInSection }}
-            <a href="{{ .RelPermalink }}" class="text-sm font-bold hover:text-primary flex items-center text-dark dark:text-white">
+            <!-- [수정] 기본 흰색 -> 호버 시 Primary -->
+            <a href="{{ .RelPermalink }}" class="text-sm font-bold text-dark dark:text-white hover:text-primary dark:hover:text-primary flex items-center transition-colors">
               <i class="fa fa-arrow-left mr-2"></i> {{ .Title }}
             </a>
             {{ else }}
@@ -64,7 +63,7 @@
             {{ end }}
 
             {{ with .NextInSection }}
-            <a href="{{ .RelPermalink }}" class="text-sm font-bold hover:text-primary flex items-center text-dark dark:text-white">
+            <a href="{{ .RelPermalink }}" class="text-sm font-bold text-dark dark:text-white hover:text-primary dark:hover:text-primary flex items-center transition-colors">
               {{ .Title }} <i class="fa fa-arrow-right ml-2"></i>
             </a>
             {{ end }}
@@ -89,28 +88,29 @@
     color: inherit;
   }
 
-  /* 
-    [수정] 다크모드 대응
-    - 배경을 약간 투명한 흰색으로 설정
-    - 글자색(color)을 흰색(#fff)으로 강제
-  */
+  /* 다크모드 대응 */
   :is(.dark) .project-content aside {
-    background-color: rgba(255, 255, 255, 0.1); 
-    border-left-color: var(--color-primary);
-    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-left-color: var(--color-primary); /* 포인트 컬러 유지는 하되 */
+    color: #eeeeee; /* 글자는 밝은 회색/흰색으로 확실하게 */
   }
   
-  /* [수정] 리스트 아이템 색상: 흰색의 80% 불투명도 */
   :is(.dark) .project-content ul, 
   :is(.dark) .project-content ol {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.85);
   }
   
-  /* 제목 태그 색상 보정 */
   :is(.dark) .project-content h1,
   :is(.dark) .project-content h2,
   :is(.dark) .project-content h3 {
     color: #ffffff;
+  }
+  
+  /* 링크 색상도 다크모드에서 잘 보이게 */
+  :is(.dark) .project-content a {
+    color: #ffffff;
+    text-decoration: underline;
+    text-decoration-color: var(--color-primary);
   }
 </style>
 {{ end }}
