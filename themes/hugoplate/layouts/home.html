@@ -1,39 +1,95 @@
 {{ define "main" }}
   <!-- Banner -->
   {{ with .Params.banner }}
-    <section class="section pt-14">
-      <div class="container">
-        <div class="row justify-center">
-          <div class="lg:col-7 md:col-9 mb-8 text-center">
-            <h1 class="mb-4 text-h3 lg:text-h1">
-              {{ .title | markdownify }}
-            </h1>
-            <p class="mb-8">
-              {{ .content | markdownify }}
-            </p>
-            {{ with .button }}
-              {{ if .enable }}
-                <a
-                  class="btn btn-primary"
-                  href="{{ .link | absURL }}"
-                  {{ if strings.HasPrefix .link `http` }}
-                    target="_blank" rel="noopener"
-                  {{ end }}>
-                  {{ .label }}
-                  <i class="fa fa-arrow-right pl-2"></i>
-                </a>
-              {{ end }}
-            {{ end }}
+    <section class="section pt-14 pb-0">
+      <!-- full-bleed wrapper -->
+      <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+        
+        <div class="relative aspect-[3/1] w-full overflow-hidden">
+          
+          <!-- Background Image (z-0) -->
+          {{ partial "image" (dict
+            "Src" .image
+            "Alt" "Banner image"
+            "Loading" "eager"
+            "Class" "absolute inset-0 w-full h-full object-cover z-0"
+            "DisplayXL" "2400x"
+            "DisplayLG" "1600x"
+            "DisplayMD" "1200x"
+          ) }}
+
+          <!-- Overlay (z-10) -->
+          <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
+
+          <!-- 
+            [수정 완료] 
+            z-index를 20에서 30으로 변경했습니다.
+            이제 텍스트 컨텐츠 영역(z-20)보다 위에 배치되어 클릭 및 드래그가 가능합니다.
+          -->
+          <div
+            class="absolute bottom-3 right-4 z-30
+                   text-[11px] text-white/70
+                   bg-black/40 backdrop-blur
+                   px-2 py-1 rounded">
+            Photo by
+            <a
+              href="https://unsplash.com/ko/@atluminon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              target="_blank"
+              rel="noopener"
+              class="underline hover:text-white pointer-events-auto">
+              Clark Gu
+            </a>
+            on
+            <a
+              href="https://unsplash.com/ko/%EC%82%AC%EC%A7%84/%EB%8F%84%EC%8B%9C%EB%A5%BC-%EB%B0%B0%EA%B2%BD%EC%9C%BC%EB%A1%9C-%ED%95%9C-%EC%88%98%EC%97%AD-%EC%9C%84%EC%9D%98-%EB%8B%A4%EB%A6%AC-OsWioqup-Ck?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+              target="_blank"
+              rel="noopener"
+              class="underline hover:text-white pointer-events-auto">
+              Unsplash
+            </a>
           </div>
-          <div class="col-12">
-            {{/* image modules comes from https://github.com/gethugothemes/hugo-modules/tree/master/images */}}
-            {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]" "DisplayXL" "800x" ) }}
+
+          <!-- Main Content Wrapper (z-20) -->
+          <!-- 
+             이 부분이 전체 화면(inset-0)을 덮고 있어서 z-index가 같을 경우 
+             먼저 선언된 Photo Credit을 가리는 문제가 있었습니다.
+          -->
+          <div class="absolute inset-0 z-20 flex items-center pointer-events-none">
+            <div class="container pointer-events-auto">
+              <div class="row justify-center">
+                <div class="lg:col-7 md:col-9">
+                  <h1 class="mb-4 text-h3 lg:text-h1 text-center text-white drop-shadow-md">
+                    {{ .title | markdownify }}
+                  </h1>
+
+                  <p class="mb-8 text-justify leading-relaxed hyphens-auto text-white/90 drop-shadow-sm">
+                    {{ .content | markdownify }}
+                  </p>
+
+                  {{ with .button }}
+                    {{ if .enable }}
+                      <div class="text-center">
+                        <a
+                          class="btn btn-primary relative z-30"
+                          href="{{ .link | absURL }}"
+                          {{ if strings.HasPrefix .link `http` }}
+                            target="_blank" rel="noopener"
+                          {{ end }}>
+                          {{ .label }}
+                          <i class="fa fa-arrow-right pl-2"></i>
+                        </a>
+                      </div>
+                    {{ end }}
+                  {{ end }}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
   {{ end }}
-  <!-- /Banner -->
+  <!-- Banner -->
 
   <!-- Features -->
   {{ range $i, $e:= .Params.features }}

@@ -1,1 +1,6 @@
 /* Add your own custom styles here */
+.prose-justify {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
