@@ -36,7 +36,7 @@ FIND-A 지원을 원하시는 분께서는 아래 절차를 따라주세요.
 
 {{< button label="📄 지원서 다운로드" link="https://docs.google.com/document/d/1X4QLxmcirEohDsQqpdI46rPvu67S50gx/edit?usp=sharing&ouid=110873388418645635400&rtpof=true&sd=true" style="outline" >}}
 
-{{< button label="✅ 구글폼 접수하기" link="https://forms.gle/DX8mPSu213JhXGCcA" style="outline" >}}
+{{< button label="✅ 구글폼 접수하기" link="https://forms.gle/Xkyq1DFKaHd5sKF88" style="outline" >}}
 
 </div>
 
