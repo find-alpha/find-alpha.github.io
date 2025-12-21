@@ -13,12 +13,6 @@ weight = 2
 
 [[main]]
 parent = "소개"
-name = "소개"
-url = "/introduction"
-weight = 1
-
-[[main]]
-parent = "소개"
 name = "수상"
 url = "/awards"
 weight = 2
@@ -106,11 +100,11 @@ weight = 8
 
 # footer menu
 [[footer]]
-name = "소개"
-url = "/about"
+name = "지원하기"
+url = "/apply"
 weight = 1
 
 [[footer]]
-name = "갤러리"
-url = "/gallery"
+name = "문의하기"
+url = "/contact"
 weight = 2

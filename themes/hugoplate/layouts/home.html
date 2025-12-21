@@ -2,30 +2,51 @@
   <!-- Banner -->
   {{ with .Params.banner }}
     <section class="section pt-14 pb-0">
-      <!-- full-bleed wrapper -->
-      <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+      <div class="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] overflow-hidden">
         
-        <div class="relative aspect-[3/1] w-full overflow-hidden">
+        <!-- 높이 설정 -->
+        <div class="relative w-full min-h-[600px] lg:min-h-0 lg:aspect-[3/1]">
           
-          <!-- Background Image (z-0) -->
-          {{ partial "image" (dict
-            "Src" .image
-            "Alt" "Banner image"
-            "Loading" "eager"
-            "Class" "absolute inset-0 w-full h-full object-cover z-0"
-            "DisplayXL" "2400x"
-            "DisplayLG" "1600x"
-            "DisplayMD" "1200x"
-          ) }}
+          <!-- [수정 포인트] 이미지 경로 자동 감지 및 원본 출력 -->
+          <div class="absolute inset-0 w-full h-full z-0 banner-image-container">
+            {{ $imgSrc := .image }}
+            {{/* 1. assets 폴더에서 이미지 찾기 (맨 앞 슬래시 제거 후 검색) */}}
+            {{ $res := resources.Get (strings.TrimPrefix "/" .image) }}
+            
+            {{ if $res }}
+              {{/* assets에 있으면 해당 리소스의 주소 사용 */}}
+              {{ $imgSrc = $res.RelPermalink }}
+            {{ else }}
+              {{/* static에 있으면 원래 경로 그대로 사용 */}}
+              {{ $imgSrc = .image | relURL }}
+            {{ end }}
 
-          <!-- Overlay (z-10) -->
-          <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
+            <!-- 원본 이미지 출력 (화질 저하 없음) -->
+            <img 
+              src="{{ $imgSrc }}" 
+              alt="Banner image" 
+              loading="eager"
+              class="w-full h-full object-cover"
+            >
+          </div>
 
-          <!-- 
-            [수정 완료] 
-            z-index를 20에서 30으로 변경했습니다.
-            이제 텍스트 컨텐츠 영역(z-20)보다 위에 배치되어 클릭 및 드래그가 가능합니다.
-          -->
+          <!-- 스타일 강제 -->
+          <style>
+            .banner-image-container img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+          </style>
+
+          <!-- 오버레이 -->
+          <div class="absolute inset-0 bg-black/60 z-10 pointer-events-none"></div>
+
+          <!-- Photo Credit -->
           <div
             class="absolute bottom-3 right-4 z-30
                    text-[11px] text-white/70
@@ -49,20 +70,17 @@
             </a>
           </div>
 
-          <!-- Main Content Wrapper (z-20) -->
-          <!-- 
-             이 부분이 전체 화면(inset-0)을 덮고 있어서 z-index가 같을 경우 
-             먼저 선언된 Photo Credit을 가리는 문제가 있었습니다.
-          -->
+          <!-- Main Content -->
           <div class="absolute inset-0 z-20 flex items-center pointer-events-none">
-            <div class="container pointer-events-auto">
+            <div class="container pointer-events-auto px-6 md:px-4">
               <div class="row justify-center">
-                <div class="lg:col-7 md:col-9">
-                  <h1 class="mb-4 text-h3 lg:text-h1 text-center text-white drop-shadow-md">
+                <div class="lg:col-7 md:col-9 col-12 text-center">
+                  
+                  <h1 class="mb-6 text-3xl md:text-h3 lg:text-h1 text-white drop-shadow-lg font-bold leading-tight">
                     {{ .title | markdownify }}
                   </h1>
 
-                  <p class="mb-8 text-justify leading-relaxed hyphens-auto text-white/90 drop-shadow-sm">
+                  <p class="mb-8 text-white/90 drop-shadow-md text-sm md:text-base leading-relaxed text-justify md:text-center">
                     {{ .content | markdownify }}
                   </p>
 
@@ -70,7 +88,7 @@
                     {{ if .enable }}
                       <div class="text-center">
                         <a
-                          class="btn btn-primary relative z-30"
+                          class="btn btn-primary relative z-30 border-white/20"
                           href="{{ .link | absURL }}"
                           {{ if strings.HasPrefix .link `http` }}
                             target="_blank" rel="noopener"
@@ -95,27 +113,32 @@
   {{ range $i, $e:= .Params.features }}
     <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
       <div class="container">
+        <!-- 
+           [수정 포인트 4] 모바일 레이아웃 정렬
+           모바일에서는 이미지가 위, 텍스트가 아래로 오도록 flex-col-reverse 등을 활용하거나
+           현재 구조상 col이 쌓이므로 mb-6 간격 확인
+        -->
         <div class="row items-center justify-between">
           <div
-            class="mb:md-0 {{ if not (modBool $i 2) }}
+            class="mb-10 md:mb-0 {{ if not (modBool $i 2) }}
               md:order-2
-            {{ end }} md:col-5 mb-6">
-            {{ partial "image" (dict "Src" .image "Alt" "feature image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
+            {{ end }} md:col-5 col-12">
+            {{ partial "image" (dict "Src" .image "Alt" "feature image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x" "Class" "w-full h-auto") }}
           </div>
           <div
             class="{{ if not (modBool $i 2) }}
               md:order-1
-            {{ end }} md:col-7 lg:col-6">
-            <h2 class="mb-4">
+            {{ end }} md:col-7 lg:col-6 col-12">
+            <h2 class="mb-4 text-2xl md:text-3xl font-bold">
               {{ .title | markdownify }}
             </h2>
-            <p class="mb-8 text-lg">
+            <p class="mb-8 text-base md:text-lg">
               {{ .content | markdownify }}
             </p>
             <ul>
               {{ range .bulletpoints }}
-                <li class="relative mb-4 pl-6">
-                  <i class="fa fa-check absolute left-0 top-1.5"></i>
+                <li class="relative mb-4 pl-6 text-sm md:text-base">
+                  <i class="fa fa-check absolute left-0 top-1.5 text-primary"></i>
                   {{ . | markdownify }}
                 </li>
               {{ end }}
@@ -135,17 +158,17 @@
   {{ end }}
   <!-- /Features -->
 
-  <!-- Testimonials -->
+  <!-- Testimonials (기존 코드 유지 - Swiper는 보통 반응형 지원됨) -->
   {{ with site.GetPage "sections/testimonial" }}
     {{ if .Params.enable }}
       <section class="section">
         <div class="container">
           <div class="row">
-            <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center">
-              <h2 class="mb-4">
+            <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-12 text-center col-12">
+              <h2 class="mb-4 text-2xl md:text-3xl">
                 {{ .Title | markdownify }}
               </h2>
-              <p>
+              <p class="text-sm md:text-base">
                 {{ .Params.description | markdownify }}
               </p>
             </div>
@@ -155,31 +178,23 @@
                   {{ range .Params.testimonials }}
                     <div class="swiper-slide">
                       <div
-                        class="bg-light dark:bg-darkmode-light rounded-lg px-7 py-10">
+                        class="bg-light dark:bg-darkmode-light rounded-lg px-7 py-10 h-full">
                         <div class="text-text-dark dark:text-white">
-                          <svg
-                            width="33"
-                            height="20"
-                            viewBox="0 0 33 20"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              d="M1.28375 19.41L0.79375 18.64C1.21375 17.0067 1.75042 15.07 2.40375 12.83C3.05708 10.5433 3.75708 8.28 4.50375 6.04C5.29708 3.75333 6.06708 1.77 6.81375 0.0899959H15.3538C14.9338 2.09666 14.4904 4.26667 14.0238 6.6C13.5571 8.88666 13.1371 11.15 12.7638 13.39C12.4371 15.5833 12.1571 17.59 11.9238 19.41H1.28375ZM31.69 0.0899959L32.18 0.859998C31.76 2.54 31.2233 4.5 30.57 6.74C29.9167 8.98 29.2167 11.2433 28.47 13.53C27.7233 15.77 26.9533 17.73 26.16 19.41H17.69C18.0167 17.9167 18.3433 16.33 18.67 14.65C18.9967 12.9233 19.3 11.22 19.58 9.54C19.9067 7.81333 20.1867 6.15667 20.42 4.57C20.7 2.93666 20.91 1.44333 21.05 0.0899959H31.69Z"
-                              fill="currentColor" />
-                          </svg>
+                           <!-- SVG Icon 생략 (동일) -->
+                           <svg width="33" height="20" viewBox="0 0 33 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1.28375 19.41L0.79375 18.64C1.21375 17.0067 1.75042 15.07 2.40375 12.83C3.05708 10.5433 3.75708 8.28 4.50375 6.04C5.29708 3.75333 6.06708 1.77 6.81375 0.0899959H15.3538C14.9338 2.09666 14.4904 4.26667 14.0238 6.6C13.5571 8.88666 13.1371 11.15 12.7638 13.39C12.4371 15.5833 12.1571 17.59 11.9238 19.41H1.28375ZM31.69 0.0899959L32.18 0.859998C31.76 2.54 31.2233 4.5 30.57 6.74C29.9167 8.98 29.2167 11.2433 28.47 13.53C27.7233 15.77 26.9533 17.73 26.16 19.41H17.69C18.0167 17.9167 18.3433 16.33 18.67 14.65C18.9967 12.9233 19.3 11.22 19.58 9.54C19.9067 7.81333 20.1867 6.15667 20.42 4.57C20.7 2.93666 20.91 1.44333 21.05 0.0899959H31.69Z" fill="currentColor" /></svg>
                         </div>
-                        <blockquote class="mt-8">
+                        <blockquote class="mt-8 text-sm md:text-base">
                           {{ .content | markdownify }}
                         </blockquote>
                         <div class="mt-11 flex items-center">
                           <div class="text-text-dark dark:text-white">
                             {{ partial "image" (dict "Src" .avatar "Size" "50x50" "Class" "rounded-full" "Alt" .name) }}
                           </div>
-                          <div class="ml-4">
-                            <h3 class="h5 font-primary font-semibold">
+                          <div class="ml-4 text-left">
+                            <h3 class="h5 font-primary font-semibold text-base">
                               {{ .name }}
                             </h3>
-                            <p class="text-text-dark dark:text-white">
+                            <p class="text-text-dark dark:text-white text-xs md:text-sm">
                               {{ .designation | markdownify }}
                             </p>
                           </div>
