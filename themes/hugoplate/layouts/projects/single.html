@@ -11,7 +11,9 @@
           </h4>
           <ul class="space-y-1">
             <li>
-              <a href="/projects/" class="block py-2 px-3 rounded hover:bg-white dark:hover:bg-white/5 hover:text-primary transition font-medium text-sm text-dark dark:text-white/90">
+              <a href="/projects/" class="block py-2 px-3 rounded transition font-medium text-sm text-dark dark:text-white/90
+                 hover:bg-black hover:text-white
+                 dark:hover:bg-white dark:hover:text-black">
                 <i class="fa fa-th-large mr-2"></i>전체 보기
               </a>
             </li>
@@ -22,7 +24,9 @@
                  {{ if eq $.Permalink .Permalink }}
                    bg-primary text-white font-bold shadow-md
                  {{ else }}
-                   text-text dark:text-white/70 hover:bg-white dark:hover:bg-white/5 hover:text-primary dark:hover:text-primary
+                   text-text dark:text-white/70
+                   hover:bg-black hover:text-white
+                   dark:hover:bg-white dark:hover:text-black
                  {{ end }}">
                 {{ .Title }}
               </a>

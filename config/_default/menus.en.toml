@@ -13,7 +13,7 @@ weight = 2
 
 [[main]]
 parent = "소개"
-name = "임원진"
+name = "회장단"
 url = "/presidents"
 weight = 1
 

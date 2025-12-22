@@ -29,8 +29,8 @@
             <div class="h-2 w-full bg-primary/80 group-hover:bg-primary transition-colors"></div>
 
             <div class="p-8 flex flex-col flex-grow h-full">
-              <!-- 제목 -->
-              <h2 class="text-xl font-bold mb-3 text-dark dark:text-white group-hover:text-primary transition-colors">
+              <!-- 제목: 라이트 모드에서만 hover 컬러 변경, 다크 모드는 항상 흰색 유지 -->
+              <h2 class="text-xl font-bold mb-3 text-dark dark:text-white group-hover:text-primary dark:group-hover:text-white transition-colors">
                 {{ .Title }}
               </h2>
               
@@ -47,8 +47,8 @@
                   FIND-A Project
                 </span>
 
-                <!-- [수정] 다크모드에서는 흰색 -> 호버 시 Primary 컬러 -->
-                <a href="{{ .RelPermalink }}" class="text-sm font-bold text-primary dark:text-white hover:text-primary dark:hover:text-primary hover:underline flex items-center transition-colors">
+                <!-- 링크: 다크 모드에서는 hover 시에도 흰색 유지 -->
+                <a href="{{ .RelPermalink }}" class="text-sm font-bold text-primary dark:text-white hover:text-primary dark:hover:text-white hover:underline flex items-center transition-colors">
                   자세히 보기 <i class="fa fa-arrow-right ml-1 text-xs"></i>
                 </a>
               </div>
