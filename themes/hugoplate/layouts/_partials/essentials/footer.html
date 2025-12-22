@@ -1,14 +1,14 @@
 <footer class="bg-body dark:bg-darkmode-body">
+  <!-- 
+    Footer 메뉴 (현재 비활성화)
+    나중에 다시 사용할 수 있도록 전체 블록을 주석으로 보관해 둠.
+
+    기존 구조:
+    - site.Menus.footer 를 순회하며 하단 네비게이션 렌더링
+  -->
+  <!--
   <div class="container">
     <div class="row items-center py-10">
-      <!-- 
-        Footer 메뉴 (현재 비활성화)
-        나중에 다시 사용할 수 있도록 전체 블록을 주석으로 보관해 둠.
-
-        기존 구조:
-        - site.Menus.footer 를 순회하며 하단 네비게이션 렌더링
-      -->
-      <!--
       <div class="lg:col-4 mb-8 text-center lg:mb-0">
         <ul>
           {{ range site.Menus.footer }}
@@ -30,29 +30,29 @@
           {{ end }}
         </ul>
       </div>
-      -->
-
-      <!-- 현재는 소셜 아이콘만 중앙 정렬 -->
-      <div class="col-12 text-center">
-        <ul class="social-icons inline-flex justify-center">
-          {{ range site.Data.social.main }}
-            <li>
-              <a
-                target="_blank"
-                aria-label="{{ .name }}"
-                rel="nofollow noopener"
-                href="{{ .link | safeURL }}">
-                <i class="{{ .icon }}"></i>
-              </a>
-            </li>
-          {{ end }}
-        </ul>
-      </div>
     </div>
   </div>
+  -->
+
+  <!-- 가로선(border)과 copyright 사이에 SNS 아이콘 배치 -->
   <div class="border-border dark:border-darkmode-border border-t py-7">
-    <div
-      class="text-text-light dark:text-darkmode-text-light container text-center">
+    <div class="container text-center text-text-light dark:text-darkmode-text-light">
+      <!-- SNS 아이콘: 가운데 정렬, 아래 여백 약간 -->
+      <ul class="social-icons inline-flex justify-center mb-4">
+        {{ range site.Data.social.main }}
+          <li>
+            <a
+              target="_blank"
+              aria-label="{{ .name }}"
+              rel="nofollow noopener"
+              href="{{ .link | safeURL }}">
+              <i class="{{ .icon }}"></i>
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+
+      <!-- Copyright -->
       <p>
         {{ site.Params.copyright | markdownify }}
       </p>
