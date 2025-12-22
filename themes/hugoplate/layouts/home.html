@@ -90,10 +90,7 @@
                       <div class="text-center">
                         <a
                           class="btn btn-primary relative z-30 border-white/20 bg-white text-black hover:bg-white/90 hover:text-black"
-                          href="{{ .link | absURL }}"
-                          {{ if strings.HasPrefix .link `http` }}
-                            target="_blank" rel="noopener"
-                          {{ end }}>
+                          href="{{ .link | absURL }}">
                           {{ .label }}
                           <i class="fa fa-arrow-right pl-2"></i>
                         </a>
