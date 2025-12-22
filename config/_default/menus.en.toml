@@ -13,63 +13,73 @@ weight = 2
 
 [[main]]
 parent = "소개"
+name = "임원진"
+url = "/presidents"
+weight = 1
+
+[[main]]
+parent = "소개"
+name = "동문"
+url = "/alumni"
+weight = 2
+
+[[main]]
+parent = "소개"
 name = "수상"
 url = "/awards"
-weight = 2
+weight = 3
 
 [[main]]
 parent = "소개"
 name = "연구"
 url = "/research"
+weight = 4
+
+# ------------------------------------------------
+
+[[main]]
+name = "활동"
+url = "/activities"
 weight = 3
 
 [[main]]
-parent = "소개"
+parent = "활동"
 name = "커리큘럼"
 url = "/curriculum"
-weight = 4
+weight = 1
 
 [[main]]
-parent = "소개"
+parent = "활동"
 name = "프로젝트"
 url = "/projects"
-weight = 5
+weight = 2
 
 
 [[main]]
-name = "임원진"
-url = "/presidents"
+parent = "활동"
+name = "블로그"
+url = "/blog"
 weight = 3
 
 
 [[main]]
-name = "동문"
-url = "/alumni"
-weight = 4
-
-
-[[main]]
-name = "블로그"
-url = "/blog"
-weight = 5
-
-
-[[main]]
+parent = "활동"
 name = "갤러리"
 url = "/gallery"
-weight = 6
+weight = 4
 
+# ------------------------------------------------
 
 [[main]]
 name = "지원하기"
 url = "/apply"
-weight = 7
+weight = 5
 
 
 [[main]]
 name = "문의하기"
 url = "/contact"
-weight = 8
+weight = 6
 
 
 # [[main]]
