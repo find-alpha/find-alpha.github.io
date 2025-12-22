@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://find-alpha.github.io/sitemap.xml
