@@ -75,10 +75,7 @@ image = "images/image.png"
 # verification module: https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/site-verifications
 [site_verification]
 google = "PMs6C4VwgdVPQ0TINvEh-qdwML5zxSEup9kHy-tJeUU"   # Your verification code
-bing = ""     # Your verification code
-baidu = ""    # Your verification code
-facebook = "" # Your verification code
-mastodon = "" # Your verification code
+naver = "2e8da4dd6a46a541876d6854fd261c29464ec719"
 
 # cookies
 # cookies module: https://github.com/gethugothemes/hugo-modules/tree/master/components/cookie-consent
