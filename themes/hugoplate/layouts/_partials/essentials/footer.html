@@ -1,16 +1,15 @@
-<footer class="bg-light dark:bg-darkmode-light">
+<footer class="bg-body dark:bg-darkmode-body">
   <div class="container">
     <div class="row items-center py-10">
-      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
-        <!-- navbar brand/logo -->
-        <a
-          class="navbar-brand inline-block"
-          href="{{ site.Home.RelPermalink }}">
-          {{/* https://github.com/gethugothemes/hugo-modules/tree/master/images */}}
-          {{ partial "logo" }}
-        </a>
-      </div>
-      <div class="lg:col-6 mb-8 text-center lg:mb-0">
+      <!-- 
+        Footer 메뉴 (현재 비활성화)
+        나중에 다시 사용할 수 있도록 전체 블록을 주석으로 보관해 둠.
+
+        기존 구조:
+        - site.Menus.footer 를 순회하며 하단 네비게이션 렌더링
+      -->
+      <!--
+      <div class="lg:col-4 mb-8 text-center lg:mb-0">
         <ul>
           {{ range site.Menus.footer }}
             <li class="m-3 inline-block">
@@ -31,8 +30,11 @@
           {{ end }}
         </ul>
       </div>
-      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
-        <ul class="social-icons">
+      -->
+
+      <!-- 현재는 소셜 아이콘만 중앙 정렬 -->
+      <div class="col-12 text-center">
+        <ul class="social-icons inline-flex justify-center">
           {{ range site.Data.social.main }}
             <li>
               <a

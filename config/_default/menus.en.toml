@@ -108,13 +108,13 @@ weight = 6
 # url = "/404"
 
 
-# footer menu
-[[footer]]
-name = "지원하기"
-url = "/apply"
-weight = 1
+# # footer menu
+# [[footer]]
+# name = "지원하기"
+# url = "/apply"
+# weight = 1
 
-[[footer]]
-name = "문의하기"
-url = "/contact"
-weight = 2
+# [[footer]]
+# name = "문의하기"
+# url = "/contact"
+# weight = 2

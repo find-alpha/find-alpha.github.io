@@ -8,6 +8,9 @@ description: "FIND-A 연구 이력입니다."
 draft: false
 ---
 
+## 2025
+ - TBD
+
 ## 2024
   - 윤효정, 김찬영, 함문정, 김규리, 손규진. [Esg classification by implicit rule learning via gpt-4](https://aclanthology.org/2024.finnlp-1.28/). FinNLP@LREC-COLING2024
 
