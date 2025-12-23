@@ -1,6 +1,7 @@
 <header
   class="header {{ if site.Params.navbar_fixed }}sticky top-0{{ end }} z-30">
-  <nav class="navbar container">
+  <!-- 1. 부모 nav에 relative 추가: 자식 요소(메뉴)의 절대 위치 기준점이 됨 -->
+  <nav class="navbar container relative">
     <!-- logo -->
     <div class="order-0">
       <!-- navbar brand/logo -->
@@ -28,9 +29,11 @@
     <!-- /navbar toggler -->
 
     <!-- main navbar -->
+    <!-- 2. 메뉴 수정: lg:order-1 제거하고, lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2 추가 -->
+    <!-- 이렇게 하면 로고나 우측 아이콘의 너비와 상관없이 항상 화면 정중앙에 위치합니다. -->
     <ul
       id="nav-menu"
-      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:order-1 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8">
+      class="navbar-nav order-3 hidden lg:flex w-full pb-6 lg:w-auto lg:space-x-2 lg:pb-0 xl:space-x-8 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:top-1/2 lg:-translate-y-1/2">
       {{ $currentPage := . }}
       {{ range site.Menus.main }}
         {{ $menuURL := .URL | absLangURL }}
@@ -112,6 +115,7 @@
       {{ end }}
     </ul>
 
+    <!-- 3. 우측 아이콘 영역: ml-auto가 그대로 유지되어 로고와 멀리 떨어져 우측 끝에 붙게 됩니다. -->
     <div class="order-1 ml-auto flex items-center md:order-2 lg:ml-0">
       {{ with site.Params.search }}
         {{ if .enable }}

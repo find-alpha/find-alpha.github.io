@@ -1,60 +1,128 @@
-<div class="bg-light dark:bg-darkmode-light rounded p-8 text-center h-full">
-  {{ $image:= .Params.image }}
-  {{ if $image }}
-    {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "mx-auto mb-6 rounded object-cover" "size" "120x120") }}
-  {{ else if .Params.Email }}
-    <img
-      class="mx-auto mb-6 rounded"
-      alt="{{ .Title }}"
-      height="120"
-      width="120"
-      src="https://www.gravatar.com/avatar/{{ md5 .Params.email }}?s=128&pg&d=identicon" />
-  {{ end }}
-  
-  <h4 class="mb-3">
-    <!-- 이름: 다크모드에서 흰색(dark:text-white) -->
-    <a href="{{ .RelPermalink }}" class="text-dark dark:text-white hover:text-primary transition">
-      {{ .Title }}
-    </a>
-  </h4>
+{{/* layouts/partials/components/author-card.html */}}
 
-  <!-- [수정됨] 1. 역할 -->
-  <!-- 기존 text-primary가 어두우면 안 보일 수 있으므로, 다크모드에선 흰색이나 밝은색으로 고정 -->
-  {{ with .Params.role }}
-    <p class="mb-3 text-primary dark:text-white font-bold text-sm">
-      {{ . }}
-    </p>
-  {{ end }}
+<div class="
+  group relative flex flex-col h-full rounded-2xl overflow-hidden
+  border border-border dark:border-white/10
+  bg-white dark:bg-[#222222]
+  shadow-sm
+  transition-all duration-300
+  hover:-translate-y-1 hover:shadow-xl hover:border-primary/60
+">
+  <div class="h-2 w-full bg-primary/80 transition-colors group-hover:bg-primary"></div>
 
-  <!-- [수정됨] 2. 경력 리스트 -->
-  {{ if .Params.career }}
-    <div class="mb-6 flex justify-center">
-      <!-- 
-        text-text : 라이트 모드용 (진한 회색)
-        dark:text-white : 다크 모드용 (흰색) 
-      -->
-      <ul class="text-left list-disc pl-4 text-sm text-text dark:text-white space-y-1">
-        {{ range .Params.career }}
-          <li>{{ . }}</li>
-        {{ end }}
-      </ul>
-    </div>
-  {{ else }}
-    <!-- 요약글 -->
-    <p class="mb-4 text-text dark:text-white">
-      {{ .Summary | plainify }}
-    </p>
-  {{ end }}
-
-  <ul class="social-icons">
-    {{ range .Params.social }}
-      <li class="inline-block mx-1">
-        <!-- 아이콘: 다크모드에서 흰색 -->
-        <a href="{{ .link | safeURL }}" target="_blank" rel="noopener nofollow">
-          <span class="sr-only">{{ .title }}</span>
-          <i class="{{ .icon }}"></i>
-        </a>
-      </li>
+  <!-- ✅ dark mode 기본 텍스트를 흰색으로 고정 -->
+  <div class="p-8 flex flex-col flex-grow text-text dark:text-white">
+    {{ $image := .Params.image }}
+    {{ if $image }}
+      {{ partial "image" (dict "Src" $image "Context" .Page "Alt" .Title "Class" "mx-auto mb-6 rounded-xl object-cover ring-1 ring-border dark:ring-white/10" "size" "120x120") }}
+    {{ else if .Params.Email }}
+      <img
+        class="mx-auto mb-6 rounded-xl ring-1 ring-border dark:ring-white/10"
+        alt="{{ .Title }}"
+        height="120"
+        width="120"
+        src="https://www.gravatar.com/avatar/{{ md5 .Params.email }}?s=128&pg&d=identicon" />
     {{ end }}
-  </ul>
+
+    <h4 class="text-xl font-bold mb-2 text-dark dark:text-white transition-colors group-hover:text-primary dark:group-hover:text-white text-center">
+      {{ .Title }}
+    </h4>
+
+    {{ with .Params.role }}
+      <p class="mb-3 text-sm font-semibold text-primary dark:text-white text-center">
+        {{ . }}
+      </p>
+    {{ end }}
+
+    <!-- ✅ 한줄 소개 -->
+    {{ with .Params.intro }}
+      <p class="mb-6 text-sm leading-relaxed text-text dark:text-white/90 text-center">
+        {{ . }}
+      </p>
+    {{ end }}
+
+    <!-- 학력 -->
+    {{ with .Params.education }}
+      <div class="text-left mb-6">
+        <div class="inline-flex items-center gap-2 mb-2">
+          <span class="px-2 py-1 rounded-md text-xs font-bold bg-black/5 text-dark dark:bg-white/10 dark:text-white">
+            학력
+          </span>
+        </div>
+        <div class="space-y-1 text-sm text-text dark:text-white/90">
+          {{ range . }}
+            <p class="leading-relaxed font-semibold">{{ . }}</p>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+
+    <!-- 소속 -->
+    {{ $hasFormer := and (isset .Params "former") (gt (len .Params.former) 0) }}
+    {{ $hasCurrent := and (isset .Params "current") (gt (len .Params.current) 0) }}
+    {{ if or $hasFormer $hasCurrent }}
+      <div class="text-left">
+        <div class="inline-flex items-center gap-2 mb-3">
+          <span class="px-2 py-1 rounded-md text-xs font-bold bg-black/5 text-dark dark:bg-white/10 dark:text-white">
+            소속
+          </span>
+        </div>
+
+        <div class="space-y-2">
+          {{ with .Params.former }}
+            {{ range . }}
+              <div class="flex items-baseline gap-2 text-sm min-w-0 text-text/80 dark:text-white/80">
+                <span class="font-semibold shrink-0 text-dark/80 dark:text-white/80">前</span>
+                <span class="min-w-0 flex-1 truncate tracking-tight font-semibold opacity-80" title="{{ . }}">
+                  {{ . }}
+                </span>
+              </div>
+            {{ end }}
+          {{ end }}
+
+          {{ with .Params.current }}
+            {{ range . }}
+              <div class="flex items-baseline gap-2 text-sm min-w-0">
+                <span class="font-extrabold shrink-0 text-primary dark:text-white">現</span>
+                <span class="min-w-0 flex-1 truncate tracking-tight font-extrabold text-primary dark:text-white" title="{{ . }}">
+                  {{ . }}
+                </span>
+              </div>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+
+
+    <!-- socials -->
+    {{ if .Params.social }}
+      <div class="mt-auto pt-7">
+        <div class="flex justify-center gap-3">
+          {{ range .Params.social }}
+            <a
+              class="
+                inline-flex h-11 w-11 items-center justify-center rounded-xl
+                border border-transparent
+                ring-2 ring-inset ring-white
+                bg-black text-white
+            
+                dark:ring-black dark:bg-white dark:text-black
+            
+                transition-all duration-200
+                hover:-translate-y-0.5 hover:shadow-md
+                hover:ring-primary
+                dark:hover:ring-primary
+              "
+              href="{{ .link | safeURL }}"
+              target="_blank"
+              rel="noopener nofollow"
+              aria-label="{{ .name }}">
+              <i class="{{ .icon }}"></i>
+            </a>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
 </div>
