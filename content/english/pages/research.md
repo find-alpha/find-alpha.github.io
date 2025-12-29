@@ -9,7 +9,7 @@ draft: false
 ---
 
 ## 2025
- - TBD
+ - 조진형 외 1명, [Do GPs truly present fair value? The case of continuation funds](https://doi.org/10.1016/j.intfin.2025.102265), Journal of International Financial Markets, Institutions and Money, 107, 102265
 
 ## 2024
   - 윤효정, 김찬영, 함문정, 김규리, 손규진. [Esg classification by implicit rule learning via gpt-4](https://aclanthology.org/2024.finnlp-1.28/). FinNLP@LREC-COLING2024
