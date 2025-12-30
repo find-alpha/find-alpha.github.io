@@ -1,25 +1,25 @@
 {{/* layouts/authors/list.html (or your members page list template) */}}
 
 {{ define "main" }}
-  {{ partial "page-header" . }}
+{{ partial "page-header" . }}
 
-  <section class="section pt-14 pb-20">
-    <div class="container">
+<section class="section pt-14 pb-20">
+  <div class="container">
 
-      <!-- top description -->
-      <div class="max-w-3xl mx-auto text-center mb-16">
-        <div class="content text-lg text-text dark:text-white/90">
-          {{ .Content }}
-        </div>
+    <!-- top description -->
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <div class="content text-lg text-text dark:text-white/90">
+        {{ .Content }}
       </div>
-
-      <!-- members grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {{ range .RegularPages.ByWeight }}
-          {{ partial "components/author-card" . }}
-        {{ end }}
-      </div>
-
     </div>
-  </section>
+
+    <!-- members grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {{ range .RegularPages.ByWeight }}
+      {{ partial "components/author-card" . }}
+      {{ end }}
+    </div>
+
+  </div>
+</section>
 {{ end }}
