@@ -26,7 +26,7 @@
       {{ $allTags = $allTags | uniq | sort }}
 
       {{ if or $generations $allTags }}
-        <div class="mb-10 flex flex-wrap items-center gap-3">
+        <div class="mb-10 flex flex-wrap items-center gap-3 px-1 sm:px-0">
 
           {{/* 기수 필터 */}}
           {{ if $generations }}
@@ -63,7 +63,7 @@
 
       {{/* ── 카드 그리드 ── */}}
       {{ if $pages }}
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-1 sm:px-0" id="gallery-grid">
           {{ range $pages.ByDate.Reverse }}
             {{ $coverName := .Params.cover | default "cover.jpg" }}
             {{ $cover := .Resources.GetMatch $coverName }}
@@ -96,7 +96,7 @@
 
               {{/* 텍스트 영역 */}}
               <div class="p-5 flex flex-col gap-2">
-                <h3 class="text-base font-bold text-text dark:text-white leading-snug">
+                <h3 class="text-sm sm:text-base font-bold text-text dark:text-white leading-snug">
                   {{ .Title }}
                 </h3>
                 <div class="flex items-center justify-between gap-2 text-xs text-text-light dark:text-darkmode-text-light">
@@ -171,16 +171,28 @@
 
     document.querySelectorAll('[data-filter-gen]').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        activeGen = this.dataset.filterGen;
-        setActive('gen', this);
+        var val = this.dataset.filterGen;
+        if (val !== 'all' && activeGen === val) {
+          activeGen = 'all';
+          setActive('gen', document.querySelector('[data-filter-gen="all"]'));
+        } else {
+          activeGen = val;
+          setActive('gen', this);
+        }
         applyFilters();
       });
     });
 
     document.querySelectorAll('[data-filter-tag]').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        activeTag = this.dataset.filterTag;
-        setActive('tag', this);
+        var val = this.dataset.filterTag;
+        if (val !== 'all' && activeTag === val) {
+          activeTag = 'all';
+          setActive('tag', document.querySelector('[data-filter-tag="all"]'));
+        } else {
+          activeTag = val;
+          setActive('tag', this);
+        }
         applyFilters();
       });
     });
