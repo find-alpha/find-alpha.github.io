@@ -1,0 +1,97 @@
+{{ define "main" }}
+  {{/* 헤더는 항상 "갤러리"로 고정 */}}
+  <section>
+    <div class="container text-center">
+      <div class="from-body to-light dark:from-darkmode-body dark:to-darkmode-light rounded-2xl bg-gradient-to-b px-8 py-14">
+        <h1>갤러리</h1>
+        <ul class="mt-6 inline-flex space-x-1 capitalize">
+          <li><a href="{{ "/" | relLangURL }}" class="text-primary dark:text-darkmode-primary hover:underline">Home</a><span class="inlin-block mr-1">/</span></li>
+          <li><a href="{{ "/gallery/" | relLangURL }}" class="text-primary dark:text-darkmode-primary hover:underline">갤러리</a><span class="inlin-block mr-1">/</span></li>
+          <li><span class="text-primary dark:text-darkmode-primary">{{ .Title }}</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+
+      {{/* 뒤로 가기 */}}
+      <div class="mb-8">
+        <a href="{{ "/gallery/" | relLangURL }}"
+           class="inline-flex items-center gap-2 text-sm text-text-light dark:text-darkmode-text-light hover:text-primary dark:hover:text-darkmode-primary transition-colors">
+          <i class="fa-solid fa-arrow-left text-xs"></i> 갤러리로 돌아가기
+        </a>
+      </div>
+
+      {{/* 제목 + 메타 */}}
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold text-text dark:text-white mb-3">{{ .Title }}</h2>
+        <div class="flex flex-wrap items-center gap-3 text-sm text-text-light dark:text-darkmode-text-light">
+          <span><i class="fa-regular fa-calendar mr-1"></i>{{ .Date.Format "2006년 01월 02일" }}</span>
+          {{ with .Params.generation }}
+            <span class="px-3 py-1 rounded-full bg-primary/10 dark:bg-darkmode-primary/10 text-primary dark:text-darkmode-primary font-semibold">{{ . }}기</span>
+          {{ end }}
+          {{ range .Params.tags }}
+            <span class="px-3 py-1 rounded-full bg-light dark:bg-darkmode-light">{{ . }}</span>
+          {{ end }}
+        </div>
+      </div>
+
+      {{/* 이미지 그리드 */}}
+      {{ $coverName := .Params.cover | default "cover.jpg" }}
+      {{ $allImages := .Resources.Match "*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}" }}
+
+      {{ if $allImages }}
+        {{/* cover를 맨 앞으로 정렬 */}}
+        {{ $cover := .Resources.GetMatch $coverName }}
+        {{ $others := slice }}
+        {{ range $allImages }}
+          {{ if ne .Name $coverName }}
+            {{ $others = $others | append . }}
+          {{ end }}
+        {{ end }}
+
+        {{ $sorted := slice }}
+        {{ with $cover }}{{ $sorted = $sorted | append . }}{{ end }}
+        {{ range $others }}{{ $sorted = $sorted | append . }}{{ end }}
+
+        {{ $count := len $sorted }}
+        {{ $colClass := "columns-1 sm:columns-2 lg:columns-3" }}
+        {{ if eq $count 1 }}{{ $colClass = "columns-1 max-w-2xl mx-auto" }}
+        {{ else if eq $count 2 }}{{ $colClass = "columns-1 sm:columns-2" }}
+        {{ end }}
+
+        <div class="{{ $colClass }} gap-4 space-y-4">
+          {{ range $sorted }}
+            {{ $thumb := .Resize "1200x webp" }}
+            <div class="break-inside-avoid">
+              <a href="{{ .RelPermalink }}"
+                 class="glightbox block overflow-hidden rounded-xl cursor-zoom-in"
+                 data-gallery="gallery-{{ $.File.UniqueID }}"
+                 data-title="{{ $.Title }}">
+                <img
+                  src="{{ $thumb.RelPermalink }}"
+                  alt="{{ $.Title }}"
+                  class="w-full object-cover hover:opacity-90 transition-opacity duration-300"
+                  loading="lazy"
+                />
+              </a>
+            </div>
+          {{ end }}
+        </div>
+      {{ else }}
+        <div class="text-center py-24 text-text-light dark:text-darkmode-text-light">
+          <i class="fa-regular fa-image text-4xl mb-4 block"></i>
+          <p>이미지를 준비 중입니다.</p>
+        </div>
+      {{ end }}
+
+      {{/* 본문 내용 (선택적) */}}
+      {{ with .Content }}
+        <div class="content mt-10">{{ . }}</div>
+      {{ end }}
+
+    </div>
+  </section>
+{{ end }}

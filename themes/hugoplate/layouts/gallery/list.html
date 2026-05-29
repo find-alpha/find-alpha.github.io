@@ -1,0 +1,196 @@
+{{ define "main" }}
+  {{ partial "page-header" . }}
+
+  <section class="section-sm">
+    <div class="container">
+
+      {{/* ── 필터 바 ── */}}
+      {{ $pages := .RegularPages }}
+
+      {{/* 기수 목록 수집 */}}
+      {{ $generations := slice }}
+      {{ range $pages }}
+        {{ if .Params.generation }}
+          {{ $generations = $generations | append (.Params.generation | int) }}
+        {{ end }}
+      {{ end }}
+      {{ $generations = $generations | uniq | sort | collections.Reverse }}
+
+      {{/* 태그 목록 수집 */}}
+      {{ $allTags := slice }}
+      {{ range $pages }}
+        {{ range .Params.tags }}
+          {{ $allTags = $allTags | append . }}
+        {{ end }}
+      {{ end }}
+      {{ $allTags = $allTags | uniq | sort }}
+
+      {{ if or $generations $allTags }}
+        <div class="mb-10 flex flex-wrap items-center gap-3">
+
+          {{/* 기수 필터 */}}
+          {{ if $generations }}
+            <div class="flex flex-wrap gap-2 items-center">
+              <span class="text-sm font-semibold text-text-light dark:text-darkmode-text-light mr-1">기수</span>
+              <button
+                class="filter-btn filter-gen active btn btn-sm btn-primary"
+                data-filter-gen="all">전체</button>
+              {{ range $generations }}
+                <button
+                  class="filter-btn filter-gen btn btn-sm btn-outline-primary"
+                  data-filter-gen="{{ . }}">{{ . }}기</button>
+              {{ end }}
+            </div>
+          {{ end }}
+
+          {{/* 태그 필터 */}}
+          {{ if $allTags }}
+            <div class="flex flex-wrap gap-2 items-center {{ if $generations }}ml-4 pl-4 border-l border-border dark:border-darkmode-border{{ end }}">
+              <span class="text-sm font-semibold text-text-light dark:text-darkmode-text-light mr-1">태그</span>
+              <button
+                class="filter-btn filter-tag active btn btn-sm btn-primary"
+                data-filter-tag="all">전체</button>
+              {{ range $allTags }}
+                <button
+                  class="filter-btn filter-tag btn btn-sm btn-outline-primary"
+                  data-filter-tag="{{ . }}">{{ . }}</button>
+              {{ end }}
+            </div>
+          {{ end }}
+
+        </div>
+      {{ end }}
+
+      {{/* ── 카드 그리드 ── */}}
+      {{ if $pages }}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+          {{ range $pages.ByDate.Reverse }}
+            {{ $coverName := .Params.cover | default "cover.jpg" }}
+            {{ $cover := .Resources.GetMatch $coverName }}
+
+            {{ $gen := "" }}
+            {{ with .Params.generation }}{{ $gen = . | string }}{{ end }}
+            {{ $tags := delimit .Params.tags "," }}
+
+            <div class="gallery-card group flex flex-col bg-white dark:bg-[#222222] rounded-xl overflow-hidden border border-border dark:border-white/10 hover:shadow-xl hover:border-primary dark:hover:border-darkmode-primary transition-all duration-300 cursor-pointer"
+                 data-generation="{{ $gen }}"
+                 data-tags="{{ $tags }}"
+                 data-url="{{ .RelPermalink }}">
+
+              {{/* 대표 이미지 영역 — 5:3 고정 비율 */}}
+              <div class="relative overflow-hidden" style="aspect-ratio: 5/3;">
+                {{ if $cover }}
+                  {{ $thumb := $cover.Fill "800x480 webp" }}
+                  <img
+                    src="{{ $thumb.RelPermalink }}"
+                    alt="{{ .Title }}"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                {{ else }}
+                  <div class="w-full h-full bg-light dark:bg-darkmode-light flex items-center justify-center">
+                    <span class="text-text-light dark:text-darkmode-text-light text-sm">이미지 없음</span>
+                  </div>
+                {{ end }}
+              </div>
+
+              {{/* 텍스트 영역 */}}
+              <div class="p-5 flex flex-col gap-2">
+                <h3 class="text-base font-bold text-text dark:text-white leading-snug">
+                  {{ .Title }}
+                </h3>
+                <div class="flex items-center justify-between gap-2 text-xs text-text-light dark:text-darkmode-text-light">
+                  {{/* 왼쪽: 날짜 + 기수 */}}
+                  <div class="flex items-center gap-2">
+                    <span>{{ .Date.Format "2006.01.02" }}</span>
+                    {{ with .Params.generation }}
+                      <span class="px-2 py-0.5 rounded-full bg-primary/10 dark:bg-darkmode-primary/10 text-primary dark:text-darkmode-primary font-semibold">{{ . }}기</span>
+                    {{ end }}
+                  </div>
+                  {{/* 오른쪽: #태그 */}}
+                  {{ if .Params.tags }}
+                    <div class="flex flex-wrap justify-end gap-1">
+                      {{ range .Params.tags }}
+                        <span class="text-text-light dark:text-darkmode-text-light">#{{ . }}</span>
+                      {{ end }}
+                    </div>
+                  {{ end }}
+                </div>
+              </div>
+
+            </div>
+          {{ end }}
+        </div>
+
+        {{/* 필터 결과 없음 메시지 */}}
+        <p id="gallery-empty" class="hidden text-center text-text-light dark:text-darkmode-text-light py-16">
+          해당 조건의 활동 기록이 없습니다.
+        </p>
+
+      {{ else }}
+        <p class="text-center text-text-light dark:text-darkmode-text-light py-16">
+          갤러리를 준비 중입니다.
+        </p>
+      {{ end }}
+
+    </div>
+  </section>
+
+  <script>
+  (function () {
+    var activeGen = 'all';
+    var activeTag = 'all';
+
+    function applyFilters() {
+      var cards = document.querySelectorAll('.gallery-card');
+      var visible = 0;
+      cards.forEach(function (card) {
+        var gen  = card.dataset.generation || '';
+        var tags = card.dataset.tags ? card.dataset.tags.split(',') : [];
+        var genMatch = activeGen === 'all' || gen === activeGen;
+        var tagMatch = activeTag === 'all' || tags.indexOf(activeTag) !== -1;
+        if (genMatch && tagMatch) {
+          card.style.display = '';
+          visible++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      var empty = document.getElementById('gallery-empty');
+      if (empty) empty.classList.toggle('hidden', visible > 0);
+    }
+
+    function setActive(group, clicked) {
+      document.querySelectorAll('.filter-' + group).forEach(function (btn) {
+        btn.classList.remove('active', 'btn-primary');
+        btn.classList.add('btn-outline-primary');
+      });
+      clicked.classList.remove('btn-outline-primary');
+      clicked.classList.add('active', 'btn-primary');
+    }
+
+    document.querySelectorAll('[data-filter-gen]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        activeGen = this.dataset.filterGen;
+        setActive('gen', this);
+        applyFilters();
+      });
+    });
+
+    document.querySelectorAll('[data-filter-tag]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        activeTag = this.dataset.filterTag;
+        setActive('tag', this);
+        applyFilters();
+      });
+    });
+
+    /* 카드 클릭 → 상세 페이지 이동 */
+    document.querySelectorAll('.gallery-card').forEach(function (card) {
+      card.addEventListener('click', function () {
+        window.location.href = this.dataset.url;
+      });
+    });
+  })();
+  </script>
+{{ end }}
