@@ -7,7 +7,7 @@ date: 2025-12-22
 # categories: ["Application", "Data"]
 # author: "John Doe"
 # tags: ["nextjs", "tailwind"]
-draft: false
+draft: true
 ---
 
 블로그는 업데이트 중입니다.

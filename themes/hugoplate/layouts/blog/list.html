@@ -3,17 +3,24 @@
 
   <section class="section">
     <div class="container">
-      <div class="row">
-        <!-- 
-           [수정] .ByWeight 사용 
-           Front Matter에 weight: 1, weight: 2 등을 주면 그 순서대로 정렬됩니다.
-        -->
-        {{ range .RegularPages.ByWeight }}
-          <div class="md:col-6 lg:col-4 mb-14">
-            {{ partial "components/author-card" . }}
+      {{ if .RegularPages }}
+        <div class="row">
+          <!-- .ByWeight 사용: Front Matter에 weight: 1, 2 등을 주면 그 순서대로 정렬됩니다. -->
+          {{ range .RegularPages.ByWeight }}
+            <div class="md:col-6 lg:col-4 mb-14">
+              {{ partial "components/author-card" . }}
+            </div>
+          {{ end }}
+        </div>
+      {{ else }}
+        <div class="row justify-center">
+          <div class="lg:col-10">
+            <div class="content">
+              {{ .Content }}
+            </div>
           </div>
-        {{ end }}
-      </div>
+        </div>
+      {{ end }}
     </div>
   </section>
 {{ end }}
