@@ -3,7 +3,7 @@ title: "9기 미들 컨퍼런스"
 date: 2024-11-16
 generation: 9
 tags:
-  - 미들 컨퍼런스
+  - conference
 cover: "9-mid-conference.png"
 draft: false
 ---

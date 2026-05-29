@@ -3,7 +3,7 @@ title: "9기 파이널 컨퍼런스"
 date: 2025-01-18
 generation: 9
 tags:
-  - 파이널 컨퍼런스
+  - conference
 cover: "9-final-conference.png"
 draft: false
 ---
