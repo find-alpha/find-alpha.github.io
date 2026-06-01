@@ -1,4 +1,4 @@
-module hugoplate.netlify.app
+module github.com/find-alpha/find-alpha.github.io
 
 go 1.21
 

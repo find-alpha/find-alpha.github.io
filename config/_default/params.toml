@@ -11,7 +11,7 @@ logo_height = "100px"
 # if logo_webp set false, will not generate WEBP version of logo | default is true
 logo_webp = true
 # logo text will only show when logo is missing.
-logo_text = "Hugoplate"
+logo_text = "FIND-A"
 # navbar fixed to top
 navbar_fixed = true
 # theme-mode
@@ -60,7 +60,7 @@ show_categories = true
 [announcement]
 enable = false
 expire_days = 7
-content = "<span class='text-center block'>♥️ Loving Hugoplate? <a class='underline' href='https://github.com/zeon-studio/hugoplate' target='_blank' rel='noopener'>Please ⭐️ on Github</a></span>"
+content = "<span class='text-center block'>FIND-A 공식 홈페이지를 방문해 주셔서 감사합니다.</span>"
 
 # seo meta data for OpenGraph / Twitter Card
 # seo module: https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/basic-seo

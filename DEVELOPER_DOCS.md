@@ -7,19 +7,19 @@ Explains how to change colors, fonts, configuration, content, and layouts. Provi
 ## 1. Quick Facts
 
 - Stack: Hugo (extended) + Tailwind CSS (Hugo Pipes) + Hugo Modules.
-- Theme Tokens: `exampleSite/data/theme.json`.
-- Config: `exampleSite/hugo.toml` + `exampleSite/config/_default/*.toml`.
-- Content Root (English): `exampleSite/content/english`.
+- Theme Tokens: `data/theme.json`.
+- Config: `hugo.toml` + `config/_default/*.toml`.
+- Content Root (English): `content/english`.
 - Layouts & Partials: `layouts/`.
 - CSS Source: `assets/css/` (`main.css` is the Tailwind entry).
-- Tailwind Plugins (custom): `exampleSite/tailwind-plugin/`.
+- Tailwind Plugins (custom): `tailwind-plugin/`.
 - Output (built site): `public/` (do not edit).
 
 ---
 
 ## 2. Theme Design Tokens (`theme.json`)
 
-File: `exampleSite/data/theme.json`
+File: `data/theme.json`
 
 ```json
 {
@@ -100,7 +100,7 @@ File: `exampleSite/data/theme.json`
 
 ## 3. Configuration Overview
 
-Location: `exampleSite/hugo.toml` and `exampleSite/config/_default/`
+Location: `hugo.toml` and `config/_default/`
 
 | File | Purpose |
 |------|---------|
@@ -163,7 +163,7 @@ Add new language by copying block, pointing `contentDir` to a parallel directory
 
 ## 4. Content Authoring
 
-English root: `exampleSite/content/english/`
+English root: `content/english/`
 
 Common blog front matter example:
 
@@ -241,7 +241,7 @@ Block pattern example:
 ## 6. Assets (CSS & JS)
 
 - Tailwind entry: `assets/css/main.css` (imports Tailwind + custom layers + plugin directives).
-- Custom plugin JS (for Tailwind theme & grid): `exampleSite/tailwind-plugin/`.
+- Custom plugin JS (for Tailwind theme & grid): `tailwind-plugin/`.
 - Additional CSS/JS added via `[[params.plugins.css]]` & `[[params.plugins.js]]` arrays in `hugo.toml`.
 - Lazy CSS uses the media="print" + onload swap pattern (see `style.html`).
 - Production build fingerprints (cache busts) & optionally minifies assets.
@@ -252,7 +252,7 @@ Change or extend styles by adding files in `assets/css/` and importing them insi
 
 ## 7. Extending Theme Tokens (Tailwind)
 
-Files: `exampleSite/tailwind-plugin/tw-theme.js`, `exampleSite/tailwind-plugin/tw-bs-grid.js`.
+Files: `tailwind-plugin/tw-theme.js`, `tailwind-plugin/tw-bs-grid.js`.
 
 To add a new color token:
 

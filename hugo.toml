@@ -21,10 +21,10 @@ defaultContentLanguageInSubdir = false
 ########################### Services #############################
 [services]
 [services.googleAnalytics]
-ID = 'G-MEASUREMENT_ID' # see https://gohugo.io/templates/internal/#configure-google-analytics
+ID = '' # Set a GA4 measurement ID when analytics is needed.
 
 [services.disqus]
-shortname = 'themefisher-template' # we use disqus to show comments in blog posts . To install disqus please follow this tutorial https://portfolio.peter-baumgartner.net/2017/09/10/how-to-install-disqus-on-hugo/
+shortname = '' # Set a Disqus shortname only if comments are enabled.
 
 ########################## Permalinks ############################
 [permalinks.page]
