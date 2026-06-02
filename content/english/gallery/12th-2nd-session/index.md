@@ -1,6 +1,6 @@
 ---
 title: "12기 2차 Session"
-date: 2025-12-27
+date: 2026-02-07
 generation: 12
 tags:
   - Session
