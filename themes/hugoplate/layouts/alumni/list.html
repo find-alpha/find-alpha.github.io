@@ -1,0 +1,15 @@
+{{ define "main" }}
+{{ partial "page-header" . }}
+
+<section class="section pt-14 pb-20">
+  <div class="container">
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {{ range .Site.Data.alumni }}
+        {{ partial "components/alumni-card" . }}
+      {{ end }}
+    </div>
+
+  </div>
+</section>
+{{ end }}

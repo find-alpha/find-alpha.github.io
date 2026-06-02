@@ -1,0 +1,127 @@
+- name: 이*성
+  generation: 1
+  company: 메리츠증권 법인영업본부
+
+- name: 김*원
+  generation: 1
+  company: 구도자산운용
+
+- name: 문*주
+  generation: 1
+  company: 하나자산운용
+
+- name: 김*찬
+  generation: 1
+  company: 삼일회계법인
+
+- name: 안*영
+  generation: 1
+  company: 센드버드
+
+- name: 이*진
+  generation: 2
+  company: CJ올리브네트웍스
+
+- name: 김*윤
+  generation: 3
+  company: 한국거래소
+
+- name: 이*한
+  generation: 3
+  company: DS투자증권
+
+- name: 김*배
+  generation: 4
+  company: 삼성자산운용
+
+- name: 손*연
+  generation: 4
+  company: 서울핀테크랩
+
+- name: 이*연
+  generation: 5
+  company: 인천상공회의소
+
+- name: 박*원
+  generation: 5
+  company: 성균관대학교 인공지능융합학과
+
+- name: 정*연
+  generation: 5
+  company: 한국투자증권
+
+- name: 김*영
+  generation: 5
+  company: 구도자산운용
+
+- name: 이*울
+  generation: 6
+  company: AIM Intelligence
+
+- name: 이*기
+  generation: 6
+  company: (주)대륜이엔에스 기획팀
+
+- name: 김*민
+  generation: 6
+  company: 트러스톤자산운용
+
+- name: 이*윤
+  generation: 6
+  company: 코드프레소
+
+- name: 홍*화
+  generation: 6
+  company: 에이티지
+
+- name: 최*
+  generation: 6
+  company: GS네오텍
+
+- name: 송*혜
+  generation: 6
+  company: NICE피앤아이
+
+- name: 윤*정
+  generation: 7
+  company: 비씨카드
+
+- name: 신*호
+  generation: 7
+  company: 키움증권
+
+- name: 박*연
+  generation: 7
+  company: VF Space
+
+- name: 전*원
+  generation: 7
+  company: KDB생명
+
+- name: 정*빈
+  generation: 8
+  company: 우리은행
+
+- name: 송*희
+  generation: 8
+  company: 에프앤자산평가
+
+- name: 조*형
+  generation: 9
+  company: 금융감독원
+
+- name: 김*준
+  generation: 9
+  company: 에프앤가이드
+
+- name: 최*열
+  generation: 9
+  company: 크래프트테크놀로지스
+
+- name: 손*기
+  generation: 9
+  company: 유리자산운용
+
+- name: 이*준
+  generation: 10
+  company: NH투자증권
