@@ -18,6 +18,10 @@
   generation: 1
   company: 센드버드
 
+- name: 이*울
+  generation: 2
+  company: AIM Intelligence
+
 - name: 이*진
   generation: 2
   company: CJ올리브네트웍스
@@ -42,10 +46,6 @@
   generation: 5
   company: 인천상공회의소
 
-- name: 박*원
-  generation: 5
-  company: 성균관대학교 인공지능융합학과
-
 - name: 정*연
   generation: 5
   company: 한국투자증권
@@ -53,10 +53,6 @@
 - name: 김*영
   generation: 5
   company: 구도자산운용
-
-- name: 이*울
-  generation: 6
-  company: AIM Intelligence
 
 - name: 이*기
   generation: 6
@@ -98,10 +94,6 @@
   generation: 7
   company: KDB생명
 
-- name: 정*빈
-  generation: 8
-  company: 우리은행
-
 - name: 송*희
   generation: 8
   company: 에프앤자산평가
@@ -125,3 +117,7 @@
 - name: 이*준
   generation: 10
   company: NH투자증권
+
+- name: 정*빈
+  generation: 10
+  company: 우리은행
