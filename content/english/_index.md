@@ -2,8 +2,12 @@
 # Banner
 banner:
   title: "금융데이터분석학회 FIND-A"
-  content: "FIND-A(파인드 알파)는 Financial Data Analysis의 약자로, 금융 산업 전반의 디지털 전환에 발 맞추어 디지털 금융 역량을 지닌 인재를 양성하는 것으로 목표로 하고 있습니다."
+  content: "FIND-A(파인드 알파)는 Financial Data Analysis의 약자로, 금융 산업 전반의 디지털 전환에 발 맞추어 디지털 금융 <br>역량을 지닌 인재를 양성하는 것으로 목표로 하고 있습니다."
   image: "/images/banner.png"
+  secondary_button:
+    enable: true
+    label: "FIND-A 동문 둘러보기"
+    link: "/alumni/"
   button:
     enable: true
     label: "13기 지원하기"

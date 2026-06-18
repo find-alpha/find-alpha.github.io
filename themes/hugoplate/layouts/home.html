@@ -85,18 +85,28 @@
                     {{ .content | markdownify }}
                   </p>
 
-                  {{ with .button }}
-                    {{ if .enable }}
-                      <div class="text-center">
+                  <div class="flex flex-col items-center gap-3">
+                    {{ with .secondary_button }}
+                      {{ if .enable }}
+                        <a
+                          class="btn relative z-30 border border-white/50 bg-transparent text-white hover:bg-white/20"
+                          href="{{ .link | relURL }}">
+                          {{ .label }}
+                          <i class="fa fa-users pl-2"></i>
+                        </a>
+                      {{ end }}
+                    {{ end }}
+                    {{ with .button }}
+                      {{ if .enable }}
                         <a
                           class="btn btn-primary relative z-30 border-white/20 bg-white text-black hover:bg-white/90 hover:text-black"
                           href="{{ .link | absURL }}">
                           {{ .label }}
                           <i class="fa fa-arrow-right pl-2"></i>
                         </a>
-                      </div>
+                      {{ end }}
                     {{ end }}
-                  {{ end }}
+                  </div>
                 </div>
               </div>
             </div>
