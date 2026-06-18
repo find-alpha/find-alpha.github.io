@@ -6,7 +6,7 @@ banner:
   image: "/images/banner.png"
   button:
     enable: true
-    label: "12기 지원하기"
+    label: "13기 지원하기"
     link: "https://find-alpha.github.io/apply/"
 
 # # Features
