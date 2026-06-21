@@ -31,7 +31,7 @@ FIND-A 신입 학회원은 1학기 동안 매주 토요일 약 3~4시간 동안 
 
 ### [활동 분야]
 
-FIND-A 13기에서는 **Quantitative Finance(QA)** 팀과 **Financial Engineering(FE)** 팀으로 나누어 활동을 진행합니다. 본인의 관심 분야에 맞춰 지원해 주시기 바랍니다.
+**Quantitative Finance(QA)** 팀과 **Financial Engineering(FE)** 팀으로 나뉘어 활동이 진행됩니다.
 
 #### 1. Quantitative Finance (QA팀)
 * **정량적 포트폴리오 관리 :** 데이터 기반의 자산 배분 및 포트폴리오 운용 전략 수립
