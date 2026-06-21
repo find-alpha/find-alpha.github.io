@@ -59,8 +59,6 @@ FIND-A 13기에서는 **Quantitative Finance(QA)** 팀과 **Financial Engineerin
 
 <hr>
 
-<hr>
-
 ### [세부사항 및 우대 조건]
 
 #### 지원 대상
